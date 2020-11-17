@@ -143,29 +143,9 @@ html {
 	--red-bg: #f44336;
 }
 
-
 body {
 	z-index: -1000;
 	min-height: 100vh;
-}
-h1 {
-	font-size: 4vw;
-}
-
-h2 {
-	font-size: 2rem
-}
-
-h3 {
-	font-size: 1.75rem
-}
-
-.h1{
-	font-size: 3.3125rem;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	margin: 20px 0 20px 0;
 }
 
 .text-white {
@@ -227,12 +207,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .flex-shrink{
-	-ms-flex-negative:0;
 	flex-shrink:0;
 	-webkit-box-flex:0;
-	-ms-flex-positive:0;
 	flex-grow:0;
-	-ms-flex-preferred-size:50%;
 	flex-basis: 50%;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
@@ -254,7 +231,6 @@ h1, h2, h3, h4, h5, h6 {
 	justify-content:flex-start;
 	align-items: start;
 }
-
 
 .flex-right{
 	-ms-flex-pack:distribute;
