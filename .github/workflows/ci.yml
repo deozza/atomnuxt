@@ -53,7 +53,7 @@ jobs:
     needs: ci
 
     steps:
-      - uses: jsmrcaga/action-netlify-deploy@v1.1.0
+      - uses: jsmrcaga/action-netlify-deploy@v1.2.0
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_DEPLOY_TO_PROD: true
