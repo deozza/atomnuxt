@@ -26,11 +26,11 @@
       <BaseParagraph>Lorem ipsum dolor sit amet</BaseParagraph>
       <BaseParagraph :visual-type="'success'">Lorem ipsum dolor sit amet</BaseParagraph>
       <BaseHeader html-type="h2">Headers</BaseHeader>
-      <BaseHeader :html-type="'h1'">Lorem ipsum dolor sit amet</BaseHeader>
-      <BaseHeader :html-type="'h2'">Lorem ipsum dolor sit amet</BaseHeader>
-      <BaseHeader :html-type="'h3'">Lorem ipsum dolor sit amet</BaseHeader>
-      <BaseHeader :html-type="'h4'">Lorem ipsum dolor sit amet</BaseHeader>
-
+      <BaseHeader html-type="h1">Lorem ipsum dolor sit amet</BaseHeader>
+      <BaseHeader html-type="h1" visual-type="success">Lorem ipsum dolor sit amet in green</BaseHeader>
+      <BaseHeader html-type="h2">Lorem ipsum dolor sit amet</BaseHeader>
+      <BaseHeader html-type="h3">Lorem ipsum dolor sit amet</BaseHeader>
+      <BaseHeader html-type="h4">Lorem ipsum dolor sit amet</BaseHeader>
     </section>
   </div>
 </template>
