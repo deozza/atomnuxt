@@ -38,8 +38,8 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import BaseButton from "~/components/BaseButton.vue";
-import BaseParagraph from "~/components/Typography/BaseParagraph"
-import BaseHeader from "~/components/Typography/BaseHeader"
+import BaseParagraph from "~/components/Typography/BaseParagraph.vue";
+import BaseHeader from "~/components/Typography/BaseHeader.vue";
 import HorizontalNavbar from "~/components/Menus/HorizontalNavbar.vue";
 
 @Component({
