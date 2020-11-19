@@ -45,6 +45,8 @@
           <BaseTextInput name="Required text input" id="text-required" input-orientation="row" html-type="text" :required="true">Text input required</BaseTextInput>
           <BaseTextInput name="Readonly input" id="text-readonly" input-orientation="row" html-type="text" :readonly="true">Text input readonly</BaseTextInput>
           <BaseSelectInput name="Select" id="select" input-orientation="row" :items="itemsForSelectInput">Simple select input</BaseSelectInput>
+          <BaseSelectInput name="Radio" id="radio" input-orientation="row" :items="itemsForSelectInput" html-type="radio">Simple radio input</BaseSelectInput>
+          <BaseSelectInput name="Checkbox" id="checkbox" input-orientation="row" :items="itemsForSelectInput" html-type="checkbox">Simple checkbox input</BaseSelectInput>
       </BaseForm>
     </section>
   </div>

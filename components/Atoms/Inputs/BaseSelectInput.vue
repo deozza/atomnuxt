@@ -1,10 +1,11 @@
 <template>
   <li
+    v-if="htmlType === 'select'"
     :class="[
 	      { [`flex-${inputOrientation}`]: inputOrientation },
     ]"
   >
-    <label :for="'select-'+id">
+    <label :for="'select-'+id" class="select-label">
       <slot></slot>
     </label>
     <select
@@ -18,6 +19,22 @@
       <option v-for="option in items" :value="option.value" :name="option.name">{{option.name}}</option>
     </select>
 
+  </li>
+
+  <li
+    v-else
+  >
+    <legend class="radio-label"><slot></slot></legend>
+    <label v-for="option in items" :for="'select-'+option.value">
+      <input
+        :type="htmlType"
+        :id="'select-'+option.value"
+        :name="name"
+        :value="option.value"
+        :required="required"
+      >
+      {{option.name}}
+    </label>
   </li>
 </template>
 
@@ -45,7 +62,6 @@ export default class BaseSelectInput extends Vue implements BaseSelectInputInter
       let expectedHtmlType = ['checkbox', 'radio', 'select'];
       return expectedHtmlType.includes(value);
     }
-
   }) htmlType!: string;
   @Prop({required:false, type:Boolean, default:false}) required!: boolean;
   @Prop({required:false, type:Boolean, default:false}) readonly!: boolean;
@@ -60,12 +76,12 @@ li{
   align-items: normal;
 }
 
-li.flex-row > label{
+li > .select-label{
   flex: 1;
   padding: .5em 1em .5em 0;
 }
 
-li.flex-row > select{
+li > select{
   flex: 2;
 }
 
