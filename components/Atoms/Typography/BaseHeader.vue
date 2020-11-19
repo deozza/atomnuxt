@@ -36,14 +36,14 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 
 interface BaseHeaderInterface {
-  htmlType: String,
-  visualType: String
+  htmlType: string,
+  visualType: string
 }
 
 @Component
 export default class BaseHeader extends Vue implements BaseHeaderInterface{
-  @Prop({required:true, type:String}) htmlType!: String;
-  @Prop({required:false, type:String, default:"default"}) visualType!: String;
+  @Prop({required:true, type:String}) htmlType!: string;
+  @Prop({required:false, type:String, default:"default"}) visualType!: string;
 }
 </script>
 
