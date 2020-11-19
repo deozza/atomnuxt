@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HorizontalNavbar :theme="'light'"></HorizontalNavbar>
+    <HorizontalNavbar theme="light"></HorizontalNavbar>
     <section>
       <BaseHeader html-type="h1">Nuxt toolbox</BaseHeader>
       <BaseParagraph>A cool toolbox of pre-baked components. Only need to add CSS to it to change colors and animations.</BaseParagraph>
@@ -8,23 +8,23 @@
     <section>
       <BaseHeader html-type="h2">Standard buttons</BaseHeader>
       <div class="flex-row flex-left">
-        <BaseButton :visual-type="'default'">Default</BaseButton>
-        <BaseButton :visual-type="'success'">Success</BaseButton>
+        <BaseButton visual-type="default">Default</BaseButton>
+        <BaseButton visual-type="success">Success</BaseButton>
       </div>
       <BaseHeader html-type="h2">Button with style</BaseHeader>
       <div class="flex-row flex-left">
-        <BaseButton :visual-type="'success'" :icon="'times'">With icon</BaseButton>
-        <BaseButton :visual-type="'success'" :icon="'times'" :only-icon="true"></BaseButton>
-        <BaseButton :visual-type="'success'" :disabled="true">Disabled</BaseButton>
-        <BaseButton :visual-type="'success'" :loading="true">Loading</BaseButton>
-        <BaseButton :visual-type="'success'" :outline="true">Outline</BaseButton>
+        <BaseButton visual-type="success" icon="times">With icon</BaseButton>
+        <BaseButton visual-type="success" icon="times" :only-icon="true"></BaseButton>
+        <BaseButton visual-type="success" :disabled="true">Disabled</BaseButton>
+        <BaseButton visual-type="success" :loading="true">Loading</BaseButton>
+        <BaseButton visual-type="success" :outline="true">Outline</BaseButton>
       </div>
     </section>
 
     <section>
       <BaseHeader html-type="h2">Typography</BaseHeader>
       <BaseParagraph>Lorem ipsum dolor sit amet</BaseParagraph>
-      <BaseParagraph :visual-type="'success'">Lorem ipsum dolor sit amet</BaseParagraph>
+      <BaseParagraph visual-type="success">Lorem ipsum dolor sit amet</BaseParagraph>
       <BaseHeader html-type="h2">Headers</BaseHeader>
       <BaseHeader html-type="h1">Lorem ipsum dolor sit amet</BaseHeader>
       <BaseHeader html-type="h1" visual-type="success">Lorem ipsum dolor sit amet in green</BaseHeader>
@@ -35,7 +35,7 @@
 
     <section>
       <BaseHeader html-type="h2">Inputs</BaseHeader>
-      <BaseForm submitText="Submit" submit-alignement="center">
+      <BaseForm submit-text="Submit" submit-alignement="center">
           <BaseTextInput name="Text input as a row" id="text-row" input-orientation="row">Text input as a row</BaseTextInput>
           <BaseTextInput name="Email input" id="email" input-orientation="row" html-type="email">Email input</BaseTextInput>
           <BaseTextInput name="Tel input" id="tel" input-orientation="row" html-type="tel">Tel input</BaseTextInput>
