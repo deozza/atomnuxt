@@ -12,12 +12,12 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 
 interface BaseParagraphInterface {
-  visualType: String
+  visualType: string
 }
 
 @Component
 export default class BaseParagraph extends Vue implements BaseParagraphInterface{
-  @Prop({required:false, type:String, default:"default"}) visualType!: String;
+  @Prop({required:false, type:String, default:"default"}) visualType!: string;
 }
 </script>
 
