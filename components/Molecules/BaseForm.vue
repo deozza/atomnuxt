@@ -19,8 +19,8 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 import BaseButton from "~/components/Atoms/BaseButton.vue";
 
 interface BaseFormInterface{
-  submitText:string,
-  submitAlignement:string
+  submitText:string;
+  submitAlignement:string;
 }
 
 @Component({

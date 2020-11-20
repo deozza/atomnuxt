@@ -12,7 +12,7 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 
 interface BaseParagraphInterface {
-  visualType: string
+  visualType: string;
 }
 
 @Component
