@@ -1,10 +1,7 @@
 <template>
   <li
     v-if="htmlType === 'select'"
-    :class="[
-	     { [`flex-row`]: true },
-       { [`flex-column`]: false },
-    ]"
+    class="flex-row"
   >
     <label :for="'select-'+id" class="select-label">
       <slot></slot>
@@ -80,6 +77,12 @@ li > .select-label{
 
 li > select{
   flex: 2;
+}
+
+@media screen and (max-width:760px) {
+  .flex-row {
+    flex-direction: column;
+  }
 }
 
 </style>

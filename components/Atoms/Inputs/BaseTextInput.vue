@@ -1,9 +1,6 @@
 <template>
   <li
-    :class="[
-	      { [`flex-row`]: true },
-	      { [`flex-column`]: false },
-    ]"
+    class="flex-row"
   >
     <label :for="'text-'+id">
       <slot></slot>
@@ -70,13 +67,19 @@ li{
   align-items: normal;
 }
 
-li.flex-row > label{
+li> label{
   flex: 1;
   padding: .5em 1em .5em 0;
 }
 
-li.flex-row > input{
+li > input{
   flex: 2;
+}
+
+@media screen and (max-width:760px) {
+  .flex-row {
+    flex-direction: column;
+  }
 }
 
 </style>
