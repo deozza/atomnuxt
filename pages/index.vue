@@ -36,17 +36,17 @@
     <section>
       <BaseHeader html-type="h2">Inputs</BaseHeader>
       <BaseForm submit-text="Submit" submit-alignement="center">
-          <BaseTextInput name="Text input as a row" id="text-row" input-orientation="row">Text input as a row</BaseTextInput>
-          <BaseTextInput name="Email input" id="email" input-orientation="row" html-type="email">Email input</BaseTextInput>
-          <BaseTextInput name="Tel input" id="tel" input-orientation="row" html-type="tel">Tel input</BaseTextInput>
-          <BaseTextInput name="Password input" id="password" input-orientation="row" html-type="password">Password input</BaseTextInput>
-          <BaseTextInput name="Number input" id="number" input-orientation="row" html-type="number">Number input</BaseTextInput>
-          <BaseTextInput name="Url input" id="url" input-orientation="row" html-type="url">Url input</BaseTextInput>
-          <BaseTextInput name="Required text input" id="text-required" input-orientation="row" html-type="text" :required="true">Text input required</BaseTextInput>
-          <BaseTextInput name="Readonly input" id="text-readonly" input-orientation="row" html-type="text" :readonly="true">Text input readonly</BaseTextInput>
-          <BaseSelectInput name="Select" id="select" input-orientation="row" :items="itemsForSelectInput">Simple select input</BaseSelectInput>
-          <BaseSelectInput name="Radio" id="radio" input-orientation="row" :items="itemsForSelectInput" html-type="radio">Simple radio input</BaseSelectInput>
-          <BaseSelectInput name="Checkbox" id="checkbox" input-orientation="row" :items="itemsForSelectInput" html-type="checkbox">Simple checkbox input</BaseSelectInput>
+          <BaseTextInput name="Text input as a row" id="text-row"      html-type="text">Text input as a row</BaseTextInput>
+          <BaseTextInput name="Email input"         id="email"         html-type="email">Email input</BaseTextInput>
+          <BaseTextInput name="Tel input"           id="tel"           html-type="tel">Tel input</BaseTextInput>
+          <BaseTextInput name="Password input"      id="password"      html-type="password">Password input</BaseTextInput>
+          <BaseTextInput name="Number input"        id="number"        html-type="number">Number input</BaseTextInput>
+          <BaseTextInput name="Url input"           id="url"           html-type="url">Url input</BaseTextInput>
+          <BaseTextInput name="Required text input" id="text-required" html-type="text" :required="true">Text input required</BaseTextInput>
+          <BaseTextInput name="Readonly input"      id="text-readonly" html-type="text" :readonly="true">Text input readonly</BaseTextInput>
+          <BaseSelectInput name="Select"            id="select"        html-type="select"   :items="itemsForSelectInput">Simple select input</BaseSelectInput>
+          <BaseSelectInput name="Radio"             id="radio"         html-type="radio"    :items="itemsForSelectInput">Simple radio input</BaseSelectInput>
+          <BaseSelectInput name="Checkbox"          id="checkbox"      html-type="checkbox" :items="itemsForSelectInput">Simple checkbox input</BaseSelectInput>
       </BaseForm>
     </section>
   </div>
