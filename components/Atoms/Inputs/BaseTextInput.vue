@@ -1,7 +1,8 @@
 <template>
   <li
     :class="[
-	      { [`flex-${inputOrientation}`]: inputOrientation },
+	      { [`flex-row`]: true },
+	      { [`flex-column`]: false },
     ]"
   >
     <label :for="'text-'+id">
@@ -27,20 +28,16 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 import BaseInputInterface from "~/components/Atoms/Inputs/BaseInputInterface";
 interface BaseTextInputInterface extends BaseInputInterface{
-  minlength: number,
-  maxlength: number,
-  min: number,
-  max: number
+  minlength: number;
+  maxlength: number;
+  min: number;
+  max: number;
 }
 
 @Component
 export default class BaseTextInput extends Vue implements BaseTextInputInterface{
   @Prop({required:true, type:String}) id!: string;
   @Prop({required:true, type:String}) name!: string;
-  @Prop({required:true, type:String, validator(value: string): boolean {
-      let expectedInputOrientation = ['row', 'column'];
-      return expectedInputOrientation.includes(value);
-    }}) inputOrientation!: string;
   @Prop({
     required:false,
     type:String,
@@ -63,6 +60,7 @@ export default class BaseTextInput extends Vue implements BaseTextInputInterface
     }}) maxlength!: number;
   @Prop({required:false, type:Number, default:null}) max!: number;
   @Prop({required:false, type:Number, default:null}) min!: number;
+
 }
 </script>
 

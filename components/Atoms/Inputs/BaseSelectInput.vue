@@ -2,7 +2,8 @@
   <li
     v-if="htmlType === 'select'"
     :class="[
-	      { [`flex-${inputOrientation}`]: inputOrientation },
+	     { [`flex-row`]: true },
+       { [`flex-column`]: false },
     ]"
   >
     <label :for="'select-'+id" class="select-label">
@@ -50,10 +51,6 @@ interface BaseSelectInputInterface extends BaseInputInterface{
 export default class BaseSelectInput extends Vue implements BaseSelectInputInterface{
   @Prop({required:true, type:String}) id!: string;
   @Prop({required:true, type:String}) name!: string;
-  @Prop({required:true, type:String, validator(value: string): boolean {
-      let expectedInputOrientation = ['row'];
-      return expectedInputOrientation.includes(value);
-    }}) inputOrientation!: string;
   @Prop({
     required:false,
     type:String,
