@@ -24,14 +24,14 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 
 interface BaseButtonInterface {
-  htmlType: string,
-	visualType: string,
-  icon: string,
-  onlyIcon: boolean,
-  outline: boolean,
-  round: boolean,
-	loading: boolean,
-	disabled: boolean,
+  htmlType: string;
+	visualType: string;
+  icon: string;
+  onlyIcon: boolean;
+  outline: boolean;
+  round: boolean;
+	loading: boolean;
+	disabled: boolean;
 }
 
 @Component
