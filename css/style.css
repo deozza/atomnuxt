@@ -281,3 +281,9 @@ a.decoration-none {
 		display: none;
 	}
 }
+
+@media only screen and (min-width:1024px) {
+  .hide-desktop{
+    display: none;
+  }
+}
