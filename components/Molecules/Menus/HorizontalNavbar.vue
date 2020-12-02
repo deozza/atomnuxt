@@ -20,11 +20,10 @@
             'flex-column-mobile': navbarIsToggled,
             'flex-around-mobile': navbarIsToggled
           }">
-          <BaseLink v-for="link in links" :link="link" />
+          <BaseLink v-for="link of links" v-bind:key="link" :link="link" />
         </div>
       </div>
     </div>
-
   </div>
 
 </template>
@@ -49,7 +48,7 @@ export default class HorizontalNavbar extends Vue implements MenuLinkInterface{
 .menu {
   height: 60px;
   width: 100%;
-  z-index: 1;
+  z-index: 100;
   top: 0;
   left: 0;
   padding-top: 12px;
