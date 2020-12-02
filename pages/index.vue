@@ -3,7 +3,7 @@
     <HorizontalNavbar
       theme="dark"
       :links="menuLinks"
-    ></HorizontalNavbar>
+    />
     <section>
       <BaseHeader html-type="h1">Nuxt toolbox</BaseHeader>
       <BaseParagraph>A cool toolbox of pre-baked components. Only need to add CSS to it to change colors and animations.</BaseParagraph>
@@ -52,6 +52,10 @@
           <BaseSelectInput name="Checkbox"          id="checkbox"      html-type="checkbox" :items="itemsForSelectInput">Simple checkbox input</BaseSelectInput>
       </BaseForm>
     </section>
+
+    <section>
+      <BaseTable :table="table" caption="Responsive table"/>
+    </section>
   </div>
 </template>
 
@@ -65,6 +69,8 @@ import BaseForm from "~/components/Molecules/BaseForm.vue";
 import BaseHeader from "~/components/Atoms/Typography/BaseHeader.vue";
 import HorizontalNavbar from "~/components/Molecules/Menus/HorizontalNavbar.vue";
 import Link from "~/components/Atoms/Link/Link";
+import BaseTable from "~/components/Molecules/Table/BaseTable.vue";
+import Table from "~/components/Molecules/Table/Table";
 
 @Component({
   components: {
@@ -74,7 +80,8 @@ import Link from "~/components/Atoms/Link/Link";
     BaseSelectInput,
     BaseForm,
     BaseHeader,
-    HorizontalNavbar
+    HorizontalNavbar,
+    BaseTable
   }
 })
 export default class IndexPage extends Vue {
@@ -98,7 +105,18 @@ export default class IndexPage extends Vue {
       internalLink: false,
       icon: "fab fa-github"
     }
-  ]
+  ];
+
+  table: Table = {
+    columns: [
+      {title: 'name'},
+      {title: 'salary'}
+    ],
+    rows: [
+      {content: {name: 'Dom', salary: '6000'}},
+      {content: {name: 'Melissa', salary: '4000'}},
+    ]
+  };
 }
 </script>
 
