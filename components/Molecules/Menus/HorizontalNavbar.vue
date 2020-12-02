@@ -20,7 +20,7 @@
             'flex-column-mobile': navbarIsToggled,
             'flex-around-mobile': navbarIsToggled
           }">
-          <BaseLink v-for="link in links" v-bind:key="link" :link="link" />
+          <BaseLink v-for="link in links" :link="link" />
         </div>
       </div>
     </div>
