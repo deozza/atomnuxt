@@ -19,7 +19,7 @@ interface BaseLinkInterface {
 
 @Component
 export default class BaseLink extends Vue implements BaseLinkInterface{
-  @Prop({required:true, type:Link}) link!: Link;
+  @Prop({required:true, type:Object}) link!: Link;
 }
 </script>
 
