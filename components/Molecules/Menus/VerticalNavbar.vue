@@ -1,7 +1,6 @@
 <template>
-  <div
-    class="menu"
-    :class="[
+  <div class="menu"
+       :class="[
 	      { [`menu-${theme}`]: theme },
     	]"
   >
@@ -9,26 +8,30 @@
       <n-link to="/" class="logo">
         Toolbox
       </n-link>
-      <div>
-        <input class="menu-btn" type="checkbox" id="menu-btn" />
-        <label class="hide-desktop btn-hamburger menu-icon" for="menu-btn"><i class="fas fa-bars fa-2x"></i></label>
-      </div>
+      <span class="menu-icon" @click="navbarIsToggled = !navbarIsToggled"><i class="fas fa-bars fa-2x"/></span>
     </div>
-    <div class="hide-mobile">
-      <div v-for="link in links">
-        <BaseLink :link="link" />
+
+    <div class="flex-row flex-left-desktop">
+      <div
+        class="menu-content"
+        :class="{
+          'menu-content-toggled': navbarIsToggled,
+          'flex-column-mobile': navbarIsToggled,
+          'flex-around-mobile': navbarIsToggled
+        }"
+        id="sidenav">
+        <BaseLink v-for="link in links" v-bind:key="link" :link="link" />
       </div>
     </div>
 
   </div>
-
 </template>
 
 <script lang="ts">
 import {Component, Prop, Vue} from "vue-property-decorator";
-import Link from "~/components/Atoms/Link/Link";
 import MenuLinkInterface from "~/components/Atoms/Link/MenuLinkInterface";
 import BaseLink from "~/components/Atoms/Link/BaseLink.vue";
+import Link from "~/components/Atoms/Link/Link";
 
 @Component({
   components: {BaseLink}
@@ -36,64 +39,83 @@ import BaseLink from "~/components/Atoms/Link/BaseLink.vue";
 export default class VerticalNavbar extends Vue implements MenuLinkInterface{
   @Prop({required:true, type:String}) theme!: string;
   @Prop({required:true, type:Array}) links!: Array<Link>;
+  navbarIsToggled = false;
 }
 </script>
 
 <style scoped>
-div.menu{
-  height: 100%;
-  width: 20vw;
+.menu {
+  width: 13vw;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  overflow-x: hidden;
+  padding-top: 20px;
 }
 
-.menu-light{
-  background-color: white;
-  border-bottom: 1px solid black;
-}
-
-.menu-dark{
-  background-color: black;
-}
-
-div.menu a {
+.menu a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 16px;
   display: block;
 }
-
-.menu-light a, .menu-light .btn-hamburger  {
-  color: black
-}
-
-.menu-dark a, .menu-dark .btn-hamburger {
-  color: white
-}
-
-div.menu a:hover {
+.menu a:hover {
   transition: all ease .2s;
 }
 
-.nuxt-link-active{
-  font-weight: bold;
+.menu.menu-light{
+  background-color: white;
+  border-right: 1px solid black;
 }
 
-div .menu .logo{
+.menu.menu-light a, .menu.menu-light i{
+  color: black
+}
+
+.menu.menu-dark{
+  background-color: black;
+}
+
+.menu.menu-dark a, .menu.menu-dark i{
+  color: white
+}
+
+div.menu .logo{
   font-size: 24px !important;
   font-weight: bold;
 }
 
-@media only screen and (max-width:1024px) {
-  div.menu{
-    height: 48px;
-    width: 100%;
+@media only screen and (min-width:1024px) {
+  .menu{
+    height: 100%;
   }
-  .btn-hamburger{
-    padding: 6px 8px 6px 16px;
+  div.menu .menu-btn, div.menu .menu-icon{
+    display: none;
+  }
+}
+@media only screen and (max-width:1024px) {
+  div.menu .menu-btn, div.menu .menu-icon{
+    display: block;
+    cursor: pointer;
+  }
+
+  div.menu .menu-icon i {
+    padding-right: 12px;
+  }
+
+  div.menu{
+    width: 100%;
+    padding-bottom: 12px;
+  }
+
+  .menu-content{
+    display: none;
+  }
+
+  .menu-content-toggled{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
   }
 }
 </style>

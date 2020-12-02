@@ -1,16 +1,13 @@
 <template>
-  <div>
+  <div >
     <VerticalNavbar
       theme="dark"
       :links="menuLinks"
     ></VerticalNavbar>
-    <div style="margin-left:21vw">
       <section>
         <BaseHeader html-type="h1">Vertical navbar exemple</BaseHeader>
         <BaseParagraph>Here is an exemple of a vertical, fixed and full height navbar.</BaseParagraph>
       </section>
-    </div>
-
   </div>
 </template>
 
