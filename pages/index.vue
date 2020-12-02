@@ -1,7 +1,7 @@
 <template>
   <div>
     <HorizontalNavbar
-      theme="light"
+      theme="dark"
       :links="menuLinks"
     ></HorizontalNavbar>
     <section>

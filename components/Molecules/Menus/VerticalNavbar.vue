@@ -18,8 +18,7 @@
           'menu-content-toggled': navbarIsToggled,
           'flex-column-mobile': navbarIsToggled,
           'flex-around-mobile': navbarIsToggled
-        }"
-        id="sidenav">
+        }">
         <BaseLink v-for="link in links" v-bind:key="link" :link="link" />
       </div>
     </div>
