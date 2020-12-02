@@ -1,6 +1,9 @@
 <template>
   <div>
-    <HorizontalNavbar theme="light"></HorizontalNavbar>
+    <HorizontalNavbar
+      theme="dark"
+      :links="menuLinks"
+    ></HorizontalNavbar>
     <section>
       <BaseHeader html-type="h1">Nuxt toolbox</BaseHeader>
       <BaseParagraph>A cool toolbox of pre-baked components. Only need to add CSS to it to change colors and animations.</BaseParagraph>
@@ -61,6 +64,7 @@ import BaseSelectInput from "~/components/Atoms/Inputs/BaseSelectInput.vue";
 import BaseForm from "~/components/Molecules/BaseForm.vue";
 import BaseHeader from "~/components/Atoms/Typography/BaseHeader.vue";
 import HorizontalNavbar from "~/components/Molecules/Menus/HorizontalNavbar.vue";
+import Link from "~/components/Atoms/Link/Link";
 
 @Component({
   components: {
@@ -78,6 +82,23 @@ export default class IndexPage extends Vue {
     {name:'Foo',value:1},
     {name:'Bar',value:2},
   ];
+
+  menuLinks: Array<Link> = [
+    {
+      link : "verticalNavbar",
+      title : 'VerticalNavbar',
+      customClasses: [],
+      internalLink: true,
+      icon: ""
+    },
+    {
+      link : "https://github.com/deozza/toolbox",
+      title : 'Mon repo git',
+      customClasses: [],
+      internalLink: false,
+      icon: "fab fa-github"
+    }
+  ]
 }
 </script>
 

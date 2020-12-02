@@ -5,40 +5,37 @@
     	]"
   >
     <div class="flex-row flex-between">
-      <div class="flex-row flex-between mobile-header">
-        <n-link to="/" class="logo">
-          Toolbox
-        </n-link>
-        <span class="menu-icon" @click="navbarIsToggled = !navbarIsToggled"><i class="fas fa-bars fa-2x"/></span>
-      </div>
+      <n-link to="/" class="logo">
+        Toolbox
+      </n-link>
+      <span class="menu-icon" @click="navbarIsToggled = !navbarIsToggled"><i class="fas fa-bars fa-2x"/></span>
+    </div>
 
-      <div>
-        <div
-          class="menu-content flex-row-desktop"
-          :class="{
-            'menu-content-toggled': navbarIsToggled,
-            'flex-column-mobile': navbarIsToggled,
-            'flex-around-mobile': navbarIsToggled
-          }">
-          <BaseLink v-for="link in links" v-bind:key="link" :link="link" />
-        </div>
+    <div class="flex-row flex-left-desktop">
+      <div
+        class="menu-content"
+        :class="{
+          'menu-content-toggled': navbarIsToggled,
+          'flex-column-mobile': navbarIsToggled,
+          'flex-around-mobile': navbarIsToggled
+        }">
+        <BaseLink v-for="link in links" v-bind:key="link" :link="link" />
       </div>
     </div>
 
   </div>
-
 </template>
 
 <script lang="ts">
 import {Component, Prop, Vue} from "vue-property-decorator";
-import Link from "~/components/Atoms/Link/Link";
 import MenuLinkInterface from "~/components/Atoms/Link/MenuLinkInterface";
 import BaseLink from "~/components/Atoms/Link/BaseLink.vue";
+import Link from "~/components/Atoms/Link/Link";
 
 @Component({
   components: {BaseLink}
 })
-export default class HorizontalNavbar extends Vue implements MenuLinkInterface{
+export default class VerticalNavbar extends Vue implements MenuLinkInterface{
   @Prop({required:true, type:String}) theme!: string;
   @Prop({required:true, type:Array}) links!: Array<Link>;
   navbarIsToggled = false;
@@ -47,12 +44,12 @@ export default class HorizontalNavbar extends Vue implements MenuLinkInterface{
 
 <style scoped>
 .menu {
-  height: 60px;
-  width: 100%;
+  width: 13vw;
+  position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  padding-top: 12px;
+  padding-top: 20px;
 }
 
 .menu a {
@@ -88,6 +85,9 @@ div.menu .logo{
 }
 
 @media only screen and (min-width:1024px) {
+  .menu{
+    height: 100%;
+  }
   div.menu .menu-btn, div.menu .menu-icon{
     display: none;
   }
@@ -104,14 +104,13 @@ div.menu .logo{
 
   div.menu{
     width: 100%;
+    padding-bottom: 12px;
   }
 
   .menu-content{
     display: none;
   }
-  .mobile-header{
-    width: 100%;
-  }
+
   .menu-content-toggled{
     display: flex;
     width: 100vw;
