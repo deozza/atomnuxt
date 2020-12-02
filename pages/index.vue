@@ -56,6 +56,14 @@
     <section>
       <BaseTable :table="table" caption="Responsive table"/>
     </section>
+
+    <section>
+      <BaseHeader html-type="h2">Double table</BaseHeader>
+      <div class="flex-column">
+        <BaseTable :table="table" caption="First table"/>
+        <BaseTable :table="table" caption="Second table"/>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -110,11 +118,15 @@ export default class IndexPage extends Vue {
   table: Table = {
     columns: [
       {title: 'name'},
-      {title: 'salary'}
+      {title: 'salary'},
     ],
     rows: [
       {content: {name: 'Dom', salary: '6000'}},
       {content: {name: 'Melissa', salary: '4000'}},
+    ],
+    actions: [
+      {title: 'voir', link: 'https://google.com', icon: 'fas fa-eye'},
+      {title: 'delete', link: 'https://google.com', icon: 'fas fa-times'}
     ]
   };
 }

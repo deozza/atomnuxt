@@ -5,11 +5,17 @@
       <thead>
       <tr>
         <th v-for="column of table.columns" scope="col">{{column.title}}</th>
+        <th v-if="table.actions.length > 0" scope="col">Actions</th>
       </tr>
       </thead>
       <tbody>
       <tr v-for="row of table.rows">
         <td v-for="column of table.columns" :data-label="column.title">{{row.content[column.title]}}</td>
+        <td v-if="table.actions.length>0" data-label="Actions">
+          <span v-for="action of table.actions">
+            <a :href="action.link"><i v-if="action.icon.length>0" :class="action.icon" />{{action.title}}</a>
+          </span>
+        </td>
       </tr>
       </tbody>
     </table>
@@ -45,7 +51,6 @@ table {
   table-layout: fixed;
   margin: 25px 0;
   font-size: 0.9em;
-  min-width: 400px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -74,8 +79,24 @@ tbody tr:nth-of-type(even) {
   background-color: #f3f3f3;
 }
 
-tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
+table tbody tr td span{
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+table tbody tr td span a{
+  text-decoration: none;
+  color: black
+}
+
+table tbody tr td span i{
+  padding-left: 6px;
+  padding-right: 6px;
+}
+@media screen and (min-width: 1024px) {
+  tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+  }
 }
 
 @media screen and (max-width: 1024px) {
