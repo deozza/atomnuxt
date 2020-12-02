@@ -2,6 +2,7 @@
   <div class="menu"
        :class="[
 	      { [`menu-${theme}`]: theme },
+	      {'menu-toggled': navbarIsToggled}
     	]"
   >
     <div class="flex-row flex-between">
@@ -48,10 +49,11 @@ export default class HorizontalNavbar extends Vue implements MenuLinkInterface{
 .menu {
   height: 60px;
   width: 100%;
-  z-index: 100;
+  position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
-  padding-top: 12px;
+  padding-top: 20px;
 }
 
 .menu a {
@@ -87,11 +89,15 @@ div.menu .logo{
 }
 
 @media only screen and (min-width:1024px) {
+
   div.menu .menu-btn, div.menu .menu-icon{
     display: none;
   }
 }
 @media only screen and (max-width:1024px) {
+  .menu-toggled{
+    height: 100%;
+  }
   div.menu .menu-btn, div.menu .menu-icon{
     display: block;
     cursor: pointer;
@@ -101,16 +107,14 @@ div.menu .logo{
     padding-right: 12px;
   }
 
-  div.menu{
-    width: 100%;
+  .mobile-header{
+    width: 100%
   }
 
   .menu-content{
     display: none;
   }
-  .mobile-header{
-    width: 100%;
-  }
+
   .menu-content-toggled{
     display: flex;
     width: 100vw;
