@@ -1,15 +1,11 @@
-import Column from "~/components/Atoms/Table/Column";
-import Row from "~/components/Atoms/Table/Row";
-import Action from "~/components/Atoms/Table/Action";
+import Columns from "~/components/Atoms/Table/Columns";
 
 export default class Table{
-  columns: Array<Column>;
-  rows: Array<Row>;
-  actions: Array<Action>;
+  columns: Columns;
+  data: Array<object>;
 
-  constructor(columns:Array<Column>, rows:Array<Row>, actions:Array<Action> = []) {
+  constructor(columns:Columns, data:Array<object>) {
     this.columns = columns;
-    this.rows = rows;
-    this.actions = actions;
+    this.data = data;
   }
 }

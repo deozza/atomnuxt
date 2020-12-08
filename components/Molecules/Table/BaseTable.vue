@@ -4,16 +4,16 @@
       <caption>{{caption}}</caption>
       <thead>
       <tr>
-        <th v-for="column of table.columns" scope="col">{{column.title}}</th>
-        <th v-if="table.actions.length > 0" scope="col">Actions</th>
+        <th v-for="column of table.columns.baseColumns" scope="col">{{column.title}}</th>
+        <th v-if="table.columns.actionColumns.length > 0" scope="col">Actions</th>
       </tr>
       </thead>
       <tbody>
-      <tr v-for="row of table.rows">
-        <td v-for="column of table.columns" :data-label="column.title">{{row.content[column.title]}}</td>
-        <td v-if="table.actions.length>0" data-label="Actions">
-          <span v-for="action of table.actions">
-            <a :href="action.link"><i v-if="action.icon.length>0" :class="action.icon" />{{action.title}}</a>
+      <tr v-for="row of table.data">
+        <td v-for="column of table.columns.baseColumns" :data-label="column.title">{{row[column.property]}}</td>
+        <td v-if="table.columns.actionColumns.length>0" data-label="Actions">
+          <span v-for="action of table.columns.actionColumns">
+            <a :href="row[action.property]"><i v-if="action.icon.length>0" :class="action.icon" />{{action.title}}</a>
           </span>
         </td>
       </tr>

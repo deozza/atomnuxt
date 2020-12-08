@@ -79,6 +79,8 @@ import HorizontalNavbar from "~/components/Molecules/Menus/HorizontalNavbar.vue"
 import Link from "~/components/Atoms/Link/Link";
 import BaseTable from "~/components/Molecules/Table/BaseTable.vue";
 import Table from "~/components/Molecules/Table/Table";
+import BaseColumn from "~/components/Atoms/Table/BaseColumn";
+import Columns from "~/components/Atoms/Table/Columns";
 
 @Component({
   components: {
@@ -115,20 +117,36 @@ export default class IndexPage extends Vue {
     }
   ];
 
-  table: Table = {
-    columns: [
-      {title: 'name'},
-      {title: 'salary'},
-    ],
-    rows: [
-      {content: {name: 'Dom', salary: '6000'}},
-      {content: {name: 'Melissa', salary: '4000'}},
-    ],
-    actions: [
-      {title: 'voir', link: 'https://google.com', icon: 'fas fa-eye'},
-      {title: 'delete', link: 'https://google.com', icon: 'fas fa-times'}
-    ]
-  };
+
+  objectForTable: Array<object> = [
+    {
+      id: 1,
+      name: 'Dom',
+      salary: '6000',
+      link: 'https://fake-url/1'
+    },
+    {
+      id: 2,
+      name: 'Melissa',
+      salary: '4000',
+      link: 'https://fake-url/2'
+    }
+  ];
+
+  baseColumns: Array<BaseColumn> = [
+    new BaseColumn('id', 'id'),
+    new BaseColumn('Nom', 'name'),
+    new BaseColumn('Salaire', 'salary')
+  ];
+
+  actionColumns: Array<BaseColumn> = [
+    new BaseColumn('voir', 'link', 'fas fa-eye'),
+    new BaseColumn('supprimer', 'link', 'fas fa-times')
+  ];
+
+  columns: Columns = new Columns(this.baseColumns, this.actionColumns);
+
+  table: Table = new Table(this.columns, this.objectForTable);
 }
 </script>
 
