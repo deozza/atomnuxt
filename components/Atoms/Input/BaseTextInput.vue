@@ -23,7 +23,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import BaseInputInterface from "~/components/Atoms/Inputs/BaseInputInterface";
+import BaseInputInterface from "~/components/Atoms/Input/BaseInputInterface";
 interface BaseTextInputInterface extends BaseInputInterface{
   minlength: number;
   maxlength: number;
