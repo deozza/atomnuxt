@@ -58,12 +58,9 @@
     </section>
 
     <section>
-      <BaseHeader html-type="h2">Double table</BaseHeader>
-      <div class="flex-column">
-        <BaseTable :table="table" caption="First table"/>
-        <BaseTable :table="table" caption="Second table"/>
-      </div>
+      <BaseProgressBar :value="75" animated></BaseProgressBar>
     </section>
+
   </div>
 </template>
 
@@ -81,6 +78,7 @@ import BaseTable from "~/components/Molecules/Table/BaseTable.vue";
 import Table from "~/components/Molecules/Table/Table";
 import BaseColumn from "~/components/Atoms/Table/BaseColumn";
 import Columns from "~/components/Atoms/Table/Columns";
+import BaseProgressBar from "~/components/Atoms/ProgressBar/BaseProgressBar.vue";
 
 @Component({
   components: {
@@ -91,7 +89,8 @@ import Columns from "~/components/Atoms/Table/Columns";
     BaseForm,
     BaseHeader,
     HorizontalNavbar,
-    BaseTable
+    BaseTable,
+    BaseProgressBar
   }
 })
 export default class IndexPage extends Vue {
