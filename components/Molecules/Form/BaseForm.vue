@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import BaseButton from "~/components/Atoms/BaseButton.vue";
+import BaseButton from "~/components/Atoms/Button/BaseButton.vue";
 
 interface BaseFormInterface{
   submitText:string;

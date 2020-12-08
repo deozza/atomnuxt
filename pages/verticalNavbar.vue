@@ -14,7 +14,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import Link from "~/components/Atoms/Link/Link";
-import VerticalNavbar from "~/components/Molecules/Menus/VerticalNavbar.vue";
+import VerticalNavbar from "~/components/Molecules/Menu/VerticalNavbar.vue";
 import BaseHeader from "~/components/Atoms/Typography/BaseHeader.vue";
 import BaseParagraph from "~/components/Atoms/Typography/BaseParagraph.vue";
 

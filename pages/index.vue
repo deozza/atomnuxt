@@ -69,13 +69,13 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import BaseButton from "~/components/Atoms/BaseButton.vue";
+import BaseButton from "~/components/Atoms/Button/BaseButton.vue";
 import BaseParagraph from "~/components/Atoms/Typography/BaseParagraph.vue";
-import BaseTextInput from "~/components/Atoms/Inputs/BaseTextInput.vue";
-import BaseSelectInput from "~/components/Atoms/Inputs/BaseSelectInput.vue";
-import BaseForm from "~/components/Molecules/BaseForm.vue";
+import BaseTextInput from "~/components/Atoms/Input/BaseTextInput.vue";
+import BaseSelectInput from "~/components/Atoms/Input/BaseSelectInput.vue";
+import BaseForm from "~/components/Molecules/Form/BaseForm.vue";
 import BaseHeader from "~/components/Atoms/Typography/BaseHeader.vue";
-import HorizontalNavbar from "~/components/Molecules/Menus/HorizontalNavbar.vue";
+import HorizontalNavbar from "~/components/Molecules/Menu/HorizontalNavbar.vue";
 import Link from "~/components/Atoms/Link/Link";
 import BaseTable from "~/components/Molecules/Table/BaseTable.vue";
 import Table from "~/components/Molecules/Table/Table";
