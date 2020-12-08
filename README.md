@@ -22,11 +22,30 @@ Now, using toolbox, for the same projects :
   
 Much faster and much organized. 
 
+## Based on
+
+ * Nuxtjs
+ * Typescript
+
 ## How to use
 
-### For testing
+**Requirements :**
 
-### For production
+ * Nodejs
+ * NPM
+
+To use install and use the toolbox, all you need is to fork the project. You can do it on [the github page](https://github.com/deozza/toolbox) or in a CLI :
+
+```bash
+
+git repo fork deozza/toolbox --clone --remote
+
+cd toolbox
+
+npm install
+```
+
+Then, the commands are the same as any Nuxtjs project.
 
 ## List of components
 
@@ -62,3 +81,9 @@ For now, this is the list of the available molecules :
 To know more about atoms, you can read [this](./components/Molecules/README.md).
 
 ## What's next ?
+
+All the current developments are available at the [issue page](https://github.com/deozza/toolbox/issues). Basically, I will : 
+
+ * add more atoms and molecule
+ * add callback actions on a component (API request for exemple)
+ * enable PWA features
