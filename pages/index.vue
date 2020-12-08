@@ -3,7 +3,7 @@
     <HorizontalNavbar
       theme="dark"
       :links="menuLinks"
-    ></HorizontalNavbar>
+    />
     <section>
       <BaseHeader html-type="h1">Nuxt toolbox</BaseHeader>
       <BaseParagraph>A cool toolbox of pre-baked components. Only need to add CSS to it to change colors and animations.</BaseParagraph>
@@ -52,6 +52,18 @@
           <BaseSelectInput name="Checkbox"          id="checkbox"      html-type="checkbox" :items="itemsForSelectInput">Simple checkbox input</BaseSelectInput>
       </BaseForm>
     </section>
+
+    <section>
+      <BaseTable :table="table" caption="Responsive table"/>
+    </section>
+
+    <section>
+      <BaseHeader html-type="h2">Double table</BaseHeader>
+      <div class="flex-column">
+        <BaseTable :table="table" caption="First table"/>
+        <BaseTable :table="table" caption="Second table"/>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -65,6 +77,10 @@ import BaseForm from "~/components/Molecules/BaseForm.vue";
 import BaseHeader from "~/components/Atoms/Typography/BaseHeader.vue";
 import HorizontalNavbar from "~/components/Molecules/Menus/HorizontalNavbar.vue";
 import Link from "~/components/Atoms/Link/Link";
+import BaseTable from "~/components/Molecules/Table/BaseTable.vue";
+import Table from "~/components/Molecules/Table/Table";
+import BaseColumn from "~/components/Atoms/Table/BaseColumn";
+import Columns from "~/components/Atoms/Table/Columns";
 
 @Component({
   components: {
@@ -74,7 +90,8 @@ import Link from "~/components/Atoms/Link/Link";
     BaseSelectInput,
     BaseForm,
     BaseHeader,
-    HorizontalNavbar
+    HorizontalNavbar,
+    BaseTable
   }
 })
 export default class IndexPage extends Vue {
@@ -98,7 +115,38 @@ export default class IndexPage extends Vue {
       internalLink: false,
       icon: "fab fa-github"
     }
-  ]
+  ];
+
+
+  objectForTable: Array<object> = [
+    {
+      id: 1,
+      name: 'Dom',
+      salary: '6000',
+      link: 'https://fake-url/1'
+    },
+    {
+      id: 2,
+      name: 'Melissa',
+      salary: '4000',
+      link: 'https://fake-url/2'
+    }
+  ];
+
+  baseColumns: Array<BaseColumn> = [
+    new BaseColumn('id', 'id'),
+    new BaseColumn('Nom', 'name'),
+    new BaseColumn('Salaire', 'salary')
+  ];
+
+  actionColumns: Array<BaseColumn> = [
+    new BaseColumn('voir', 'link', 'fas fa-eye'),
+    new BaseColumn('supprimer', 'link', 'fas fa-times')
+  ];
+
+  columns: Columns = new Columns(this.baseColumns, this.actionColumns);
+
+  table: Table = new Table(this.columns, this.objectForTable);
 }
 </script>
 
