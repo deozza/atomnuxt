@@ -24,21 +24,21 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 
 interface BaseButtonInterface {
-  htmlType: String,
-	visualType: String,
-  icon: String,
-  onlyIcon: boolean,
-  outline: boolean,
-  round: boolean,
-	loading: boolean,
-	disabled: boolean,
+  htmlType: string;
+	visualType: string;
+  icon: string;
+  onlyIcon: boolean;
+  outline: boolean;
+  round: boolean;
+	loading: boolean;
+	disabled: boolean;
 }
 
 @Component
 export default class BaseButton extends Vue implements BaseButtonInterface{
-	@Prop({required:false, type:String, default:"default"}) visualType!: String;
-	@Prop({required:false, type:String, default:"button"}) htmlType!: String;
-  @Prop({required:false, type:String, default:''}) icon!: String;
+	@Prop({required:false, type:String, default:"default"}) visualType!: string;
+	@Prop({required:false, type:String, default:"button"}) htmlType!: string;
+  @Prop({required:false, type:String, default:''}) icon!: string;
   @Prop({required:false, type:Boolean, default:false}) onlyIcon!: boolean;
   @Prop({required:false, type:Boolean, default:false}) outline!: boolean;
   @Prop({required:false, type:Boolean, default:false}) round!: boolean;
