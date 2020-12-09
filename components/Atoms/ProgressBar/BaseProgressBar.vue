@@ -40,7 +40,10 @@ export default class BaseProgressBar extends Vue implements BaseProgressBarInter
   @Prop({required:true, type:Number, validator(value: number): boolean {
     return value >= 0 && value <=100;
     }}) value!: number;
-  @Prop({required:false, type:String, default:"default"}) visualType!: string;
+  @Prop({required:false, type:String, default:"primary", validator(value: string): boolean {
+      let expectedValues:Array<string> = ['primary', 'secondary', 'success', 'danger', 'warning', 'info'];
+      return expectedValues.includes(value);
+    }}) visualType!: string;
   @Prop({required:false, type:String, default:"light", validator(value: string): boolean {
       let possibleValues:Array<string> = ['light', 'dark'];
       return possibleValues.includes(value);
@@ -59,6 +62,7 @@ div.progress {
   overflow: hidden;
   font-size: .75rem;
   border-radius: 100px;
+  margin: 12px 0;
 }
 
 div.progress.progress-light {
@@ -92,8 +96,28 @@ div.progress.progress-dark div.progress-bar{
   color: black;
 }
 
-div.progress div.progress-bar.progress-bar-default{
-  background-color: #007bff;
+div.progress div.progress-bar.progress-bar-primary{
+  background-color: var(--primary_bg);
+}
+
+div.progress div.progress-bar.progress-bar-secondary{
+  background-color: var(--secondary_bg);
+}
+
+div.progress div.progress-bar.progress-bar-success{
+  background-color: var(--success_bg);
+}
+
+div.progress div.progress-bar.progress-bar-danger{
+  background-color: var(--danger_bg);
+}
+
+div.progress div.progress-bar.progress-bar-warning{
+  background-color: var(--warning_bg);
+}
+
+div.progress div.progress-bar.progress-bar-info{
+  background-color: var(--info_bg);
 }
 
 div.progress div.progress-bar.progress-bar-striped {
