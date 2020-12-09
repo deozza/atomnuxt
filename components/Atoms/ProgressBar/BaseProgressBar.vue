@@ -52,7 +52,6 @@ export default class BaseProgressBar extends Vue implements BaseProgressBarInter
 <style scoped>
 
 div.progress {
-  width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

@@ -247,15 +247,11 @@ a.decoration-none {
 }
 
 .horizontal-menu-content{
-  max-width: 90%;
-  padding-top: 84px;
-  padding-left: 24px;
+  padding: 84px 24px 0 24px;
 }
 
 .vertical-menu-content{
-  max-width: calc(100% - 14vw);
-  padding-top: 20px;
-  padding-left: 15vw;
+  padding: 20px 24px 0 15vw;
 }
 
 .bg-white{
