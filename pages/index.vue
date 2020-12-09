@@ -60,20 +60,7 @@
 
     <section>
       <BaseHeader html-type="h2">Form and inputs</BaseHeader>
-      <BaseForm submit-text="Submit" submit-alignement="center" class="bg-info">
-          <BaseTextInput name="Text input as a row" id="text-row"      html-type="text">Text input as a row</BaseTextInput>
-          <BaseTextInput name="Email input"         id="email"         html-type="email">Email input</BaseTextInput>
-          <BaseTextInput name="Tel input"           id="tel"           html-type="tel">Tel input</BaseTextInput>
-          <BaseTextInput name="Password input"      id="password"      html-type="password">Password input</BaseTextInput>
-          <BaseTextInput name="Number input"        id="number"        html-type="number">Number input</BaseTextInput>
-          <BaseTextInput name="Url input"           id="url"           html-type="url">Url input</BaseTextInput>
-          <BaseTextInput name="Required text input" id="text-required" html-type="text" required>Text input required</BaseTextInput>
-          <BaseTextInput name="Readonly input"      id="text-readonly" html-type="text" readonly>Text input readonly</BaseTextInput>
-          <BaseSelectInput name="Select"            id="select"        html-type="select"   :items="itemsForSelectInput">Simple select input</BaseSelectInput>
-          <BaseSelectInput name="Select"            id="select"        html-type="select"   :items="itemsForSelectInput" required>Required select input</BaseSelectInput>
-          <BaseSelectInput name="Radio"             id="radio"         html-type="radio"    :items="itemsForSelectInput">Simple radio input</BaseSelectInput>
-          <BaseSelectInput name="Checkbox"          id="checkbox"      html-type="checkbox" :items="itemsForSelectInput">Simple checkbox input</BaseSelectInput>
-      </BaseForm>
+      <BaseForm submit-text="Submit" submit-alignement="center" class="bg-info" :form="form" />
     </section>
 
     <section>
@@ -116,6 +103,7 @@ import Table from "~/components/Molecules/Table/Table";
 import BaseColumn from "~/components/Atoms/Table/BaseColumn";
 import Columns from "~/components/Atoms/Table/Columns";
 import BaseProgressBar from "~/components/Atoms/ProgressBar/BaseProgressBar.vue";
+import Form from "~/components/Molecules/Form/Form";
 
 @Component({
   components: {
@@ -131,10 +119,37 @@ import BaseProgressBar from "~/components/Atoms/ProgressBar/BaseProgressBar.vue"
   }
 })
 export default class IndexPage extends Vue {
-  itemsForSelectInput: Array<object> = [
-    {name:'Foo',value:1},
-    {name:'Bar',value:2},
-  ];
+
+
+  form = this.createForm()
+
+  private createForm(): Form{
+    let form:Form = new Form();
+
+    form.setNewInput('text', 'text', 'Text input', 'text');
+    form.setNewInput('text', 'email', 'Email input', 'email');
+    form.setNewInput('text', 'tel', 'Telephone input', 'tel');
+    form.setNewInput('text', 'password', 'Password input', 'password');
+    form.setNewInput('text', 'number', 'Number input', 'number');
+    form.setNewInput('text', 'url', 'Url input', 'url');
+    form.setNewInput('text', 'text', 'Required input', 'required', '', true);
+    form.setNewInput('text', 'text', 'Readonly input', 'readonly', '', false, true);
+
+    const itemsForSelectInput: Array<object> = [
+      {name:'Foo',value:1},
+      {name:'Bar',value:2},
+    ];
+
+    form.setNewInput('select', 'select', 'Simple select input', 'select', 'Select', false, false, null, itemsForSelectInput);
+    form.setNewInput('select', 'select', 'Required select', 'select-required', 'Select required', true, false, null, itemsForSelectInput);
+    form.setNewInput('select', 'radio', 'Radio input', 'radio', 'Radio', false, false, null, itemsForSelectInput);
+    form.setNewInput('select', 'checkbox', 'Checkbox input', 'checkbox', 'Checkbox', false, false, null, itemsForSelectInput);
+
+    return form;
+  }
+
+
+
 
   menuLinks: Array<Link> = [
     {
