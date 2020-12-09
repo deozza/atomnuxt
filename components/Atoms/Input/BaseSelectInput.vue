@@ -4,7 +4,7 @@
     class="flex-row"
   >
     <label :for="'select-'+id" class="select-label">
-      <slot></slot>
+      <slot></slot><span v-if="required" class="required-field">*</span>
     </label>
     <select
       :id="'select-'+id"
@@ -77,6 +77,11 @@ li > .select-label{
 
 li > select{
   flex: 2;
+}
+
+label span.required-field{
+  margin-left: 6px;
+  color: var(--danger_text);
 }
 
 @media screen and (max-width:760px) {

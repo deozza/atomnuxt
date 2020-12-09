@@ -36,7 +36,10 @@ interface BaseButtonInterface {
 
 @Component
 export default class BaseButton extends Vue implements BaseButtonInterface{
-	@Prop({required:false, type:String, default:"default"}) visualType!: string;
+	@Prop({required:false, type:String, default:"primary", validator(value: string): boolean {
+	    let expectedValues:Array<string> = ['primary', 'secondary', 'success', 'danger', 'warning', 'info'];
+	    return expectedValues.includes(value);
+    }}) visualType!: string;
 	@Prop({required:false, type:String, default:"button"}) htmlType!: string;
   @Prop({required:false, type:String, default:''}) icon!: string;
   @Prop({required:false, type:Boolean, default:false}) onlyIcon!: boolean;
@@ -88,44 +91,143 @@ button.btn.btn-icon{
 .btn-round{
   border-radius: 30px !important;
 }
+
+button.btn.btn-primary{
+  color: white;
+  background-color: var(--primary_bg);
+  border-color: var(--primary_border);
+}
+
+button.btn.btn-primary:hover{
+  text-decoration: none;
+  background-color: var(--primary_bg_hover);
+  border-color: var(--primary_border_hover);
+}
+
+button.btn.btn-primary.btn-outline {
+  color: var(--primary_bg);
+  background-color: transparent;
+}
+button.btn.btn-primary.btn-outline:hover {
+  color:white;
+  text-decoration: none;
+  background-color: var(--primary_bg);
+  border-color: var(--primary_border);
+}
+
+button.btn.btn-secondary{
+  color: white;
+  background-color: var(--secondary_bg);
+  border-color: var(--secondary_border);
+}
+
+button.btn.secondary:hover{
+  text-decoration: none;
+  background-color: var(--secondary_bg_hover);
+  border-color: var(--secondary_border_hover);
+}
+
+button.btn.btn-secondary.btn-outline {
+  color: var(--secondary_bg);
+  background-color: transparent;
+}
+button.btn.btn-secondary.btn-outline:hover {
+  color:white;
+  text-decoration: none;
+  background-color: var(--secondary_bg);
+  border-color: var(--secondary_border);
+}
+
 button.btn.btn-success{
 	color: white;
-	background-color: var(--green_bg);
-	border-color: var(--green_border);
+	background-color: var(--success_bg);
+	border-color: var(--success_border);
 }
 
-button.btn.btn-success:hover, button.btn.btn-success.btn-outline:hover{
+button.btn.btn-success:hover{
 	text-decoration: none;
-	background-color: var(--green_bg_hover);
-	border-color: var(--green_border_hover);
-}
-
-button.btn.btn-default{
-	color: white;
-	background-color: lightgray;
-	border-color: lightgray;
-}
-
-button.btn.btn-default:hover{
-	text-decoration: none;
-	background-color: gray;
-	border-color: gray;
+	background-color: var(--success_bg_hover);
+	border-color: var(--success_border_hover);
 }
 
 button.btn.btn-success.btn-outline {
-  color: var(--green_bg);
+  color: var(--success_bg);
   background-color: transparent;
 }
 button.btn.btn-success.btn-outline:hover {
   color:white;
   text-decoration: none;
-  background-color: var(--green_bg);
-  border-color: var(--green_border);
+  background-color: var(--success_bg);
+  border-color: var(--success_border);
 }
 
 
-button.btn.btn-default.btn-outline {
-  color: black;
+button.btn.btn-danger{
+  color: white;
+  background-color: var(--danger_bg);
+  border-color: var(--danger_border);
+}
+
+button.btn.btn-danger:hover{
+  text-decoration: none;
+  background-color: var(--danger_bg_hover);
+  border-color: var(--danger_border_hover);
+}
+
+button.btn.btn-danger.btn-outline {
+  color: var(--danger_bg);
   background-color: transparent;
+}
+button.btn.btn-danger.btn-outline:hover {
+  color:white;
+  text-decoration: none;
+  background-color: var(--danger_bg);
+  border-color: var(--danger_border);
+}
+
+button.btn.btn-warning{
+  color: white;
+  background-color: var(--warning_bg);
+  border-color: var(--warning_border);
+}
+
+button.btn.btn-warning:hover{
+  text-decoration: none;
+  background-color: var(--warning_bg_hover);
+  border-color: var(--warning_border_hover);
+}
+
+button.btn.btn-warning.btn-outline {
+  color: var(--warning_bg);
+  background-color: transparent;
+}
+button.btn.btn-warning.btn-outline:hover {
+  color:white;
+  text-decoration: none;
+  background-color: var(--warning_bg);
+  border-color: var(--warning_border);
+}
+
+button.btn.btn-info{
+  color: white;
+  background-color: var(--info_bg);
+  border-color: var(--info_border);
+}
+
+button.btn.btn-info:hover{
+  text-decoration: none;
+  background-color: var(--info_bg_hover);
+  border-color: var(--info_border_hover);
+}
+
+button.btn.btn-info.btn-outline {
+  color: var(--info_bg);
+  background-color: transparent;
+}
+button.btn.btn-info.btn-outline:hover {
+  color:white;
+  text-decoration: none;
+  background-color: var(--info_bg);
+  border-color: var(--info_border);
 }
 </style>

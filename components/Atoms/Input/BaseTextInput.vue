@@ -3,7 +3,7 @@
     class="flex-row"
   >
     <label :for="'text-'+id">
-      <slot></slot>
+      <slot></slot><span v-if="required" class="required-field">*</span>
     </label>
     <input
       :type="htmlType"
@@ -74,6 +74,11 @@ li> label{
 
 li > input{
   flex: 2;
+}
+
+label span.required-field{
+  margin-left: 6px;
+  color: var(--danger_text);
 }
 
 @media screen and (max-width:760px) {
