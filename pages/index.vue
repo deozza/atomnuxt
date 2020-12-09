@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="horizontal-menu-content">
     <HorizontalNavbar
       theme="dark"
       :links="menuLinks"

@@ -246,30 +246,16 @@ a.decoration-none {
 	text-decoration: none;
 }
 
-.vh70{
-	height: 70vh;
-}
-.vh30{
-	height: 30vh;
-}
-.vh15{
-	height: 15vh;
+.horizontal-menu-content{
+  max-width: 90%;
+  padding-top: 84px;
+  padding-left: 24px;
 }
 
-.vw90{
-	width: 90vw;
-}
-
-.pushed-content{
-	padding: 96px 0 96px 0;
-}
-
-.pushed-content-x{
-	padding: 0 48px 0 48px;
-}
-
-.pushed-content-b{
-	padding: 0 0 96px 0;
+.vertical-menu-content{
+  max-width: calc(100% - 14vw);
+  padding-top: 20px;
+  padding-left: 15vw;
 }
 
 .bg-white{

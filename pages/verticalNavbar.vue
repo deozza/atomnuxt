@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div class="vertical-menu-content">
     <VerticalNavbar
       theme="dark"
       :links="menuLinks"
