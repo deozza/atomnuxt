@@ -9,8 +9,8 @@ export default class Form{
     this.inputs   = inputs;
   }
 
-  public setNewInput(globalType:string, htmlType:string, label:string, id:string, name:string = '', required:boolean = false, readonly:boolean = false, value:any = null, items:Array<object> = []){
-    let input = new Input(globalType, htmlType, label, id, name, required, readonly, value, items);
+  public setNewInput(globalType:string, htmlType:string, label:string, id:string, name:string = '', required:boolean = false, readonly:boolean = false, value:any = null, items:Array<object> = [], accept:Array<string> = []){
+    let input = new Input(globalType, htmlType, label, id, name, required, readonly, value, items, accept);
     this.inputs.push(input);
   }
 }

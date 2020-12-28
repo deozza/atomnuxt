@@ -23,6 +23,16 @@
           v-model="input.value"
         >
 
+        <input
+          v-if="input.globalType === 'file'"
+          :type="input.htmlType"
+          :id="'text-'+input.id"
+          :required="input.required"
+          :readonly="input.readonly"
+          :accept="input.accept"
+          v-on:change="handleFileChange($event.target.files[0], index)"
+        >
+
         <select
           v-if="input.globalType === 'select' && input.htmlType === 'select'"
           :id="'select-'+input.id"
@@ -98,6 +108,13 @@ export default class BaseForm extends Vue implements BaseFormInterface{
 
   submitForm(){
     this.$emit(this.formIsSubmitted, this.form.inputs)
+  }
+
+  handleFileChange(file, index){
+    let reader = new FileReader();
+    reader.onload =  evt => {
+      this.form.inputs[index].value = evt.target.result;
+    }
   }
 
 }
