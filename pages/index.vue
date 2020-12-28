@@ -134,7 +134,7 @@ export default class IndexPage extends Vue {
     form.setNewInput('text', 'url', 'Url input', 'url');
     form.setNewInput('text', 'text', 'Required input', 'required', '', true);
     form.setNewInput('text', 'text', 'Readonly input', 'readonly', '', false, true);
-    form.setNewInput('file', 'file', 'File input', 'file', '', false, true, null, null, ['application/pdf']);
+    form.setNewInput('file', 'file', 'File input', 'file', '', false, true, null, [], ['application/pdf']);
     const itemsForSelectInput: Array<object> = [
       {name:'Foo',value:1},
       {name:'Bar',value:2},

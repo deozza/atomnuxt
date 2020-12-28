@@ -30,7 +30,7 @@
           :required="input.required"
           :readonly="input.readonly"
           :accept="input.accept"
-          v-on:change="handleFileChange($event.target.files[0], index)"
+          v-on:change="handleFileChange(index)"
         >
 
         <select
@@ -110,10 +110,12 @@ export default class BaseForm extends Vue implements BaseFormInterface{
     this.$emit(this.formIsSubmitted, this.form.inputs)
   }
 
-  handleFileChange(file, index){
+  handleFileChange(index:number){
     let reader = new FileReader();
     reader.onload =  evt => {
-      this.form.inputs[index].value = evt.target.result;
+      if(evt.target !== null){
+        this.form.inputs[index].value = evt.target.result;
+      }
     }
   }
 
