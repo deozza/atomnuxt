@@ -24,8 +24,8 @@
         <BaseButton icon="times">With icon</BaseButton>
         <BaseButton icon="times" only-icon></BaseButton>
         <BaseButton disabled>Disabled</BaseButton>
-        <BaseButton loading=>Loading</BaseButton>
-        <BaseButton outline=>Outline</BaseButton>
+        <BaseButton loading>Loading</BaseButton>
+        <BaseButton outline>Outline</BaseButton>
       </div>
     </section>
 
@@ -60,7 +60,7 @@
 
     <section>
       <BaseHeader html-type="h2">Form and inputs</BaseHeader>
-      <BaseForm submit-text="Submit" submit-alignement="center" class="bg-info" :form="form" />
+      <BaseForm submit-text="Submit" submit-alignement="center" class="bg-info" :form="form" @formSubmitted="getFormData"/>
     </section>
 
     <section>
@@ -144,12 +144,12 @@ export default class IndexPage extends Vue {
     form.setNewInput('select', 'select', 'Required select', 'select-required', 'Select required', true, false, null, itemsForSelectInput);
     form.setNewInput('select', 'radio', 'Radio input', 'radio', 'Radio', false, false, null, itemsForSelectInput);
     form.setNewInput('select', 'checkbox', 'Checkbox input', 'checkbox', 'Checkbox', false, false, null, itemsForSelectInput);
-
     return form;
   }
 
-
-
+  private getFormData(e:Event){
+    console.log(e);
+  }
 
   menuLinks: Array<Link> = [
     {

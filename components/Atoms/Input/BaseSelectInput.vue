@@ -61,6 +61,8 @@ export default class BaseSelectInput extends Vue implements BaseSelectInputInter
   @Prop({required:false, type:Boolean, default:false}) readonly!: boolean;
   @Prop({required:false, type:Array, default:[]}) items!: Array<object>;
   @Prop({required:false, type:Boolean, default:false}) multiple!: boolean;
+  @Prop({required:false, default:null}) value!: any;
+
 }
 </script>
 

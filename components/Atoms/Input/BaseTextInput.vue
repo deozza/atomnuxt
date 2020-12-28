@@ -16,6 +16,7 @@
       :maxlength="(maxlength !== undefined && maxlength !== null && htmlType === 'text') ? maxlength : null"
       :min="(min !== undefined && min !== null && htmlType === 'number') ? min : null"
       :max="(max !== undefined && max !== null && htmlType === 'number') ? max : null"
+      v-model="value"
     >
 
   </li>
@@ -57,6 +58,7 @@ export default class BaseTextInput extends Vue implements BaseTextInputInterface
     }}) maxlength!: number;
   @Prop({required:false, type:Number, default:null}) max!: number;
   @Prop({required:false, type:Number, default:null}) min!: number;
+  @Prop({required:false, default:null}) value!: any;
 
 }
 </script>

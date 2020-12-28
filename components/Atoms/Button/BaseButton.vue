@@ -9,6 +9,7 @@
 	      { 'btn-round': ((icon.length > 0 && onlyIcon) || round) },
     	]"
 		:disabled="disabled || loading"
+    @click="emitEvent()"
 	>
 		<slot name="loading">
 			<i v-if="loading" class="fas fa-spinner fa-spin"></i>
@@ -32,6 +33,7 @@ interface BaseButtonInterface {
   round: boolean;
 	loading: boolean;
 	disabled: boolean;
+	buttonClickEvent:string;
 }
 
 @Component
@@ -47,6 +49,12 @@ export default class BaseButton extends Vue implements BaseButtonInterface{
   @Prop({required:false, type:Boolean, default:false}) round!: boolean;
   @Prop({required:false, type:Boolean, default:false}) loading!: boolean;
 	@Prop({required:false, type:Boolean, default:false}) disabled!: boolean;
+
+	buttonClickEvent = 'buttonClicked';
+
+	emitEvent(){
+	  this.$emit(this.buttonClickEvent);
+  }
 }
 </script>
 
