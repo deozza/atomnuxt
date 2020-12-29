@@ -80,7 +80,7 @@ import BaseButton from "~/components/Atoms/Button/BaseButton.vue";
 import Form from "~/components/Molecules/Form/Form";
 import BaseTextInput from "~/components/Atoms/Input/BaseTextInput.vue";
 import BaseSelectInput from "~/components/Atoms/Input/BaseSelectInput.vue";
-import Input from "~/components/Atoms/Input/Input";
+import BaseParagraph from "~/components/Atoms/Typography/BaseParagraph.vue";
 
 interface BaseFormInterface{
   submitText:string;
@@ -94,6 +94,7 @@ interface BaseFormInterface{
     BaseTextInput,
     BaseSelectInput,
     BaseButton,
+    BaseParagraph
   }
 })
 export default class BaseForm extends Vue implements BaseFormInterface{
@@ -123,25 +124,21 @@ export default class BaseForm extends Vue implements BaseFormInterface{
 </script>
 
 <style scoped>
-li{
+form > ul > li{
   padding: .5em;
   align-items: normal;
 }
 
-li> label{
+form > ul > li > label{
   flex: 1;
   padding: .5em 1em .5em 0;
 }
 
-li > input{
+form > ul > li >input, form > ul > li > select{
   flex: 2;
 }
 
-li > select{
-  flex: 2;
-}
-
-label span.required-field{
+form > ul > li > label span.required-field{
   margin-left: 6px;
   color: var(--danger_text);
 }
