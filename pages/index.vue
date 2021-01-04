@@ -126,7 +126,7 @@ export default class IndexPage extends Vue {
   private createForm(): Form{
     let form:Form = new Form();
 
-    form.setNewInput('text', 'text', 'Text input', 'text');
+    let input = form.setNewInput('text', 'text', 'Text input', 'text');
     form.setNewInput('text', 'email', 'Email input', 'email');
     form.setNewInput('text', 'tel', 'Telephone input', 'tel');
     form.setNewInput('text', 'password', 'Password input', 'password');
