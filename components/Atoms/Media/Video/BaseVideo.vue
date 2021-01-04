@@ -1,5 +1,4 @@
 <template>
-  <div
     <iframe
       v-if="iframe === true"
       :src="src"
@@ -15,7 +14,6 @@
     v-else
     :src="src"
     :alt="alt"
-    :style="cssVars"
     controls
   ></video>
 </template>

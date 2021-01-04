@@ -1,18 +1,13 @@
-import Input from "~/components/Atoms/Input/Input";
+import BaseTextInputModele from "~/components/Atoms/Input/TextInput/BaseTextInputModele";
+import BaseSelectInputModele from "~/components/Atoms/Input/SelectInput/BaseSelectInputModele";
+import BaseFileInputModele from "~/components/Atoms/Input/FileInput/BaseFileInputModele";
 
 export default class Form{
   title: string;
-  inputs:Array<Input>
+  inputs:Array<BaseTextInputModele|BaseSelectInputModele|BaseFileInputModele>
 
-  constructor(title:string = '', inputs:Array<Input> = []) {
+  constructor(title:string = '', inputs:Array<BaseTextInputModele|BaseSelectInputModele> = []) {
     this.title    = title;
     this.inputs   = inputs;
-  }
-
-  public setNewInput(globalType:string, htmlType:string, label:string, id:string, name:string = '', required:boolean = false, readonly:boolean = false, value:any = null, items:Array<object> = [], accept:Array<string> = []): Input{
-    let input = new Input(globalType, htmlType, label, id, name, required, readonly, value, items, accept);
-    this.inputs.push(input);
-
-    return input;
   }
 }

@@ -23,18 +23,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-
-interface BaseButtonInterface {
-  htmlType: string;
-	visualType: string;
-  icon: string;
-  onlyIcon: boolean;
-  outline: boolean;
-  round: boolean;
-	loading: boolean;
-	disabled: boolean;
-	buttonClickEvent:string;
-}
+import BaseButtonInterface from "~/components/Atoms/Button/BaseButtonInterface";
 
 @Component
 export default class BaseButton extends Vue implements BaseButtonInterface{

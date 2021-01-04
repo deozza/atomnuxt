@@ -50,11 +50,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-
-interface BaseHeaderInterface {
-  htmlType: string;
-  visualType: string;
-}
+import BaseHeaderInterface from "~/components/Atoms/Typography/Header/BaseHeaderInterface";
 
 @Component
 export default class BaseHeader extends Vue implements BaseHeaderInterface{

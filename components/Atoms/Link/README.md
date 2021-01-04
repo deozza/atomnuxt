@@ -1,4 +1,4 @@
-# Link
+# BaseLinkModele
 
 ## Description
 
@@ -11,8 +11,8 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import BaseLink from "~/components/Atoms/Link/BaseLink.vue";
-import Link from "~/components/Atoms/Link/Link";
+import BaseLink from "~/components/Atoms/BaseLinkModele/BaseLink.vue";
+import BaseLinkModele from "~/components/Atoms/BaseLinkModele/BaseLinkModele";
 
 @Component({
   components: {
@@ -20,7 +20,7 @@ import Link from "~/components/Atoms/Link/Link";
   }
 })
 export default class MyPage extends Vue {
-  link:Link = new Link("https://github.com/deozza/toolbok", 'My awesome repo', ['custom-class-1', 'custom-class-2'], 'font-awesome-icon', true)
+  link:BaseLinkModele = new BaseLinkModele("https://github.com/deozza/toolbok", 'My awesome repo', ['custom-class-1', 'custom-class-2'], 'font-awesome-icon', true)
 }
 </script>
 ```

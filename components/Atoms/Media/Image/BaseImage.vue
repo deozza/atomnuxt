@@ -12,14 +12,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-
-interface BaseImageInterface {
-  src: string;
-  alt: string;
-  thumbnail: boolean;
-  maxWidth: string;
-  action: string;
-}
+import BaseImageInterface from "~/components/Atoms/Media/Image/BaseImageInterface";
 
 @Component
 export default class BaseImage extends Vue implements BaseImageInterface{

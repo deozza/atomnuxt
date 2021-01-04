@@ -10,10 +10,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-
-interface BaseParagraphInterface {
-  visualType: string;
-}
+import BaseParagraphInterface from "~/components/Atoms/Typography/Paragraph/BaseParagraphInterface";
 
 @Component
 export default class BaseParagraph extends Vue implements BaseParagraphInterface{
