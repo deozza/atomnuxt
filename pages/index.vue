@@ -85,6 +85,12 @@
       <BaseProgressBar :value="75" visual-type="info" animated></BaseProgressBar>
     </section>
 
+    <section>
+      <BaseImage src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" alt="image test"></BaseImage>
+      <BaseImage src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" alt="image test" max-width="50%"></BaseImage>
+      <BaseImage src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" alt="image test" :thumbnail="true" max-width="50%"></BaseImage>
+    </section>
+
   </div>
 </template>
 
@@ -104,6 +110,7 @@ import BaseColumn from "~/components/Atoms/Table/BaseColumn";
 import Columns from "~/components/Atoms/Table/Columns";
 import BaseProgressBar from "~/components/Atoms/ProgressBar/BaseProgressBar.vue";
 import Form from "~/components/Molecules/Form/Form";
+import BaseImage from "~/components/Atoms/Media/BaseImage.vue";
 
 @Component({
   components: {
@@ -115,7 +122,8 @@ import Form from "~/components/Molecules/Form/Form";
     BaseHeader,
     HorizontalNavbar,
     BaseTable,
-    BaseProgressBar
+    BaseProgressBar,
+    BaseImage
   }
 })
 export default class IndexPage extends Vue {
