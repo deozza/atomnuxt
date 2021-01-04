@@ -31,8 +31,8 @@
 
 <script lang="ts">
 import {Component, Prop, Vue} from "vue-property-decorator";
-import Link from "~/components/Atoms/Link/Link";
-import MenuLinkInterface from "~/components/Atoms/Link/MenuLinkInterface";
+import BaseLinkModele from "~/components/Atoms/Link/BaseLinkModele";
+import MenuLinkInterface from "~/components/Molecules/Menu/MenuLinkInterface";
 import BaseLink from "~/components/Atoms/Link/BaseLink.vue";
 
 @Component({
@@ -40,7 +40,7 @@ import BaseLink from "~/components/Atoms/Link/BaseLink.vue";
 })
 export default class HorizontalNavbar extends Vue implements MenuLinkInterface{
   @Prop({required:true, type:String}) theme!: string;
-  @Prop({required:true, type:Array}) links!: Array<Link>;
+  @Prop({required:true, type:Array}) links!: Array<BaseLinkModele>;
   navbarIsToggled = false;
 }
 </script>

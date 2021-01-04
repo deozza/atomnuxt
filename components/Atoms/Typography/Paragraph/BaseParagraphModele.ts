@@ -1,6 +1,6 @@
 import BaseParagraphInterface from "~/components/Atoms/Typography/Paragraph/BaseParagraphInterface";
 
-export default class BaseParagraph implements BaseParagraphInterface {
+export default class BaseParagraphModele implements BaseParagraphInterface {
   visualType: string;
 
   constructor(visualType: string = "light") {

@@ -99,22 +99,26 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import BaseButton from "~/components/Atoms/Button/BaseButton.vue";
-import BaseParagraph from "~/components/Atoms/Typography/Paragraph/BaseParagraph.vue";
-import BaseTextInput from "~/components/Atoms/Input/BaseTextInput.vue";
-import BaseSelectInput from "~/components/Atoms/Input/BaseSelectInput.vue";
+import BaseTextInputModel from "~/components/Atoms/Input/TextInput/BaseTextInputModele";
 import BaseForm from "~/components/Molecules/Form/BaseForm.vue";
-import BaseHeader from "~/components/Atoms/Typography/Header/BaseHeader.vue";
 import HorizontalNavbar from "~/components/Molecules/Menu/HorizontalNavbar.vue";
-import Link from "~/components/Atoms/Link/Link";
+import BaseLinkModele from "~/components/Atoms/Link/BaseLinkModele";
 import BaseTable from "~/components/Molecules/Table/BaseTable.vue";
 import Table from "~/components/Molecules/Table/Table";
 import BaseColumn from "~/components/Atoms/Table/BaseColumn";
 import Columns from "~/components/Atoms/Table/Columns";
-import BaseProgressBar from "~/components/Atoms/ProgressBar/BaseProgressBar.vue";
 import Form from "~/components/Molecules/Form/Form";
+import BaseButton from "~/components/Atoms/Button/BaseButton.vue";
+import BaseParagraph from "~/components/Atoms/Typography/Paragraph/BaseParagraph.vue";
+import BaseTextInput from "~/components/Atoms/Input/TextInput/BaseTextInput.vue";
+import BaseSelectInput from "~/components/Atoms/Input/SelectInput/BaseSelectInput.vue";
+import BaseHeader from "~/components/Atoms/Typography/Header/BaseHeader.vue";
+import BaseProgressBar from "~/components/Atoms/ProgressBar/BaseProgressBar.vue";
 import BaseImage from "~/components/Atoms/Media/Image/BaseImage.vue";
 import BaseVideo from "~/components/Atoms/Media/Video/BaseVideo.vue";
+import BaseFileInputModele from "~/components/Atoms/Input/FileInput/BaseFileInputModele";
+import SelectItem from "~/components/Atoms/Input/SelectInput/SelectItem";
+import BaseSelectInputModele from "~/components/Atoms/Input/SelectInput/BaseSelectInputModele";
 
 @Component({
   components: {
@@ -139,24 +143,28 @@ export default class IndexPage extends Vue {
   private createForm(): Form{
     let form:Form = new Form();
 
-    let input = form.setNewInput('text', 'text', 'Text input', 'text');
-    form.setNewInput('text', 'email', 'Email input', 'email');
-    form.setNewInput('text', 'tel', 'Telephone input', 'tel');
-    form.setNewInput('text', 'password', 'Password input', 'password');
-    form.setNewInput('text', 'number', 'Number input', 'number');
-    form.setNewInput('text', 'url', 'Url input', 'url');
-    form.setNewInput('text', 'text', 'Required input', 'required', '', true);
-    form.setNewInput('text', 'text', 'Readonly input', 'readonly', '', false, true);
-    form.setNewInput('file', 'file', 'File input', 'file', '', false, true, null, [], ['application/pdf']);
-    const itemsForSelectInput: Array<object> = [
+    let inputText     = new BaseTextInputModel('text', 'Text input', 'text');
+    let inputEmail    = new BaseTextInputModel('email', 'Email input', 'email');
+    let inputTel      = new BaseTextInputModel('tel', 'Telephone input', 'tel');
+    let inputPassword = new BaseTextInputModel('password', 'Password input', 'password');
+    let inputNumber   = new BaseTextInputModel('number', 'Number input', 'number');
+    let inputUrl      = new BaseTextInputModel('url', 'Url input', 'url');
+    let inputRequired = new BaseTextInputModel('text', 'Required input', 'required', '', '', true);
+    let inputReadonly = new BaseTextInputModel('text', 'Readonly input', 'readonly', '', '', false, true);
+    let inputFile     = new BaseFileInputModele('file', 'File input', 'file', false, false, null, '', ['application/pdf']);
+
+    const itemsForSelectInput: Array<SelectItem> = [
       {name:'Foo',value:1},
       {name:'Bar',value:2},
     ];
 
-    form.setNewInput('select', 'select', 'Simple select input', 'select', 'Select', false, false, null, itemsForSelectInput);
-    form.setNewInput('select', 'select', 'Required select', 'select-required', 'Select required', true, false, null, itemsForSelectInput);
-    form.setNewInput('select', 'radio', 'Radio input', 'radio', 'Radio', false, false, null, itemsForSelectInput);
-    form.setNewInput('select', 'checkbox', 'Checkbox input', 'checkbox', 'Checkbox', false, false, null, itemsForSelectInput);
+    let inputSelect         = new BaseSelectInputModele('select', 'Simple select input', 'select',  itemsForSelectInput);
+    let inputRequiredSelect = new BaseSelectInputModele('select', 'Required select','select-required',  itemsForSelectInput, '', false, true);
+    let inputRadio          = new BaseSelectInputModele('radio', 'Radio input','radio',  itemsForSelectInput);
+    let inputCheckbox       = new BaseSelectInputModele('checkbox', 'Checkbox input','checkbox',  itemsForSelectInput);
+
+    form.inputs.push(inputText, inputEmail, inputTel, inputPassword, inputNumber, inputUrl, inputRequired, inputReadonly, inputFile, inputSelect, inputRequiredSelect, inputRadio, inputCheckbox);
+
     return form;
   }
 
@@ -164,7 +172,7 @@ export default class IndexPage extends Vue {
     console.log(e);
   }
 
-  menuLinks: Array<Link> = [
+  menuLinks: Array<BaseLinkModele> = [
     {
       link : "verticalNavbar",
       title : 'VerticalNavbar',

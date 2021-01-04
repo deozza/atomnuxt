@@ -11,15 +11,15 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import Link from "./Link";
+import BaseLinkModele from "./BaseLinkModele";
 
 interface BaseLinkInterface {
-  link: Link;
+  link: BaseLinkModele;
 }
 
 @Component
 export default class BaseLink extends Vue implements BaseLinkInterface{
-  @Prop({required:true, type:Object}) link!: Link;
+  @Prop({required:true, type:Object}) link!: BaseLinkModele;
 }
 </script>
 

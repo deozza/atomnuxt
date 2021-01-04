@@ -13,7 +13,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import Link from "~/components/Atoms/Link/Link";
+import BaseLinkModele from "~/components/Atoms/Link/BaseLinkModele";
 import VerticalNavbar from "~/components/Molecules/Menu/VerticalNavbar.vue";
 import BaseHeader from "~/components/Atoms/Typography/Header/BaseHeader.vue";
 import BaseParagraph from "~/components/Atoms/Typography/Paragraph/BaseParagraph.vue";
@@ -26,7 +26,7 @@ import BaseParagraph from "~/components/Atoms/Typography/Paragraph/BaseParagraph
   }
 })
 export default class verticalNavbarPage extends Vue {
-  menuLinks: Array<Link> = [
+  menuLinks: Array<BaseLinkModele> = [
     {
       link : "/",
       title : 'index',

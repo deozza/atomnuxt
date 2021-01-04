@@ -1,6 +1,6 @@
 import BaseVideoInterface from "~/components/Atoms/Media/Video/BaseVideoInterface";
 
-export default class BaseVideo implements BaseVideoInterface {
+export default class BaseVideoModele implements BaseVideoInterface {
   alt: string;
   iframe: boolean;
   src: string;

@@ -1,6 +1,6 @@
 import BaseProgressBarInterface from "./BaseProgressBarInterface";
 
-export default class BaseProgressBar implements BaseProgressBarInterface {
+export default class BaseProgressBarModele implements BaseProgressBarInterface {
   animated: boolean;
   globalStyle: string;
   value: number;

@@ -25,12 +25,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 import BaseInputInterface from "~/components/Atoms/Input/BaseInputInterface";
-interface BaseTextInputInterface extends BaseInputInterface{
-  minlength: number;
-  maxlength: number;
-  min: number;
-  max: number;
-}
+import BaseTextInputInterface from "~/components/Atoms/Input/TextInput/BaseTextInputInterface";
 
 @Component
 export default class BaseTextInput extends Vue implements BaseTextInputInterface{
@@ -52,10 +47,10 @@ export default class BaseTextInput extends Vue implements BaseTextInputInterface
   @Prop({required:false, type:Number, default:null, validator(value: number): boolean {
       return value >= 0;
     }
-  }) minlength!: number;
+  }) minLength!: number;
   @Prop({required:false, type:Number, default:null, validator(value: number): boolean {
       return value > 0;
-    }}) maxlength!: number;
+    }}) maxLength!: number;
   @Prop({required:false, type:Number, default:null}) max!: number;
   @Prop({required:false, type:Number, default:null}) min!: number;
   @Prop({required:false, default:null}) value!: any;

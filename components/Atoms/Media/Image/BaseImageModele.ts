@@ -1,6 +1,6 @@
 import BaseImageInterface from "~/components/Atoms/Media/Image/BaseImageInterface";
 
-export default class BaseImage implements BaseImageInterface {
+export default class BaseImageModele implements BaseImageInterface {
   action: string;
   alt: string;
   maxWidth: string;

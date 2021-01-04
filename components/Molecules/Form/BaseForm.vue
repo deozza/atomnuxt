@@ -5,16 +5,14 @@
         <BaseParagraph v-if="input.error !== undefined && input.error !== null && input.error !== ''" visual-type="danger">{{input.error}}</BaseParagraph>
         <div class="flex-row input-row">
 
-          <label
-            :for="input.globalType+input.id"
-          >
+          <label :for="input.id">
             {{input.label}}<span v-if="input.required" class="required-field">*</span>
           </label>
 
           <input
-            v-if="input.globalType === 'text'"
+            v-if="input.constructor.name === 'BaseTextInputModele'"
             :type="input.htmlType"
-            :id="'text-'+input.id"
+            :id="input.id"
             :required="input.required"
             :readonly="input.readonly"
             :placeholder="input.placeholder"
@@ -27,9 +25,9 @@
           >
 
           <input
-            v-if="input.globalType === 'file'"
+            v-if="input.constructor.name === 'BaseFileInputModele'"
             :type="input.htmlType"
-            :id="'text-'+input.id"
+            :id="input.id"
             :required="input.required"
             :readonly="input.readonly"
             :accept="input.accept"
@@ -37,8 +35,8 @@
           >
 
           <select
-            v-if="input.globalType === 'select' && input.htmlType === 'select'"
-            :id="'select-'+input.id"
+            v-if="input.constructor.name === 'BaseSelectInputModele' && input.htmlType === 'select'"
+            :id="input.id"
             :required="input.required"
             :readonly="input.readonly"
             :name="input.name"
@@ -49,13 +47,14 @@
             <option v-for="option in input.items" :value="option.value" :name="option.name">{{option.name}}</option>
           </select>
 
+
           <label
-            v-if="input.globalType === 'select' && input.htmlType !== 'select'"
+            v-if="input.constructor.name === 'BaseSelectInputModele' && input.htmlType !== 'select'"
             v-for="option in input.items" :for="'select-'+option.value"
           >
             <input
               :type="input.htmlType"
-              :id="'select-'+option.value"
+              :id="option.value"
               :name="input.name"
               :value="option.value"
               :required="input.required"
@@ -63,6 +62,10 @@
             >
             {{option.name}}
           </label>
+
+
+
+
         </div>
 
       </li>
@@ -80,10 +83,10 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import BaseButton from "~/components/Atoms/Button/BaseButton.vue";
 import Form from "~/components/Molecules/Form/Form";
-import BaseTextInput from "~/components/Atoms/Input/BaseTextInput.vue";
-import BaseSelectInput from "~/components/Atoms/Input/BaseSelectInput.vue";
+import BaseTextInput from "~/components/Atoms/Input/TextInput/BaseTextInput.vue";
+import BaseSelectInput from "~/components/Atoms/Input/SelectInput/BaseSelectInput.vue";
+import BaseButton from "~/components/Atoms/Button/BaseButton.vue";
 import BaseParagraph from "~/components/Atoms/Typography/Paragraph/BaseParagraph.vue";
 
 interface BaseFormInterface{

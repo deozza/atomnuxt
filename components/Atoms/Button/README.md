@@ -6,16 +6,16 @@
 
 ```vue
 <template>
-      <BaseButton>Default</BaseButton>
+      <BaseButtonModele>Default</BaseButtonModele>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import BaseButton from "~/components/Atoms/Button/BaseButton.vue";
+import BaseButtonModele from "~/components/Atoms/Button/BaseButtonModele.vue";
 
 @Component({
   components: {
-    BaseButton,
+    BaseButtonModele,
   }
 })
 export default class MyPage extends Vue {
