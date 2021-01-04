@@ -32,10 +32,7 @@ interface BaseTableInterface{
   caption:string;
 }
 
-@Component({
-  components: {
-  }
-})
+@Component
 export default class BaseTable extends Vue implements BaseTableInterface{
   @Prop({required:true, type:Object}) table!: Table;
   @Prop({required:true, type:String}) caption!: string;

@@ -47,14 +47,13 @@
             <option v-for="option in input.items" :value="option.value" :name="option.name">{{option.name}}</option>
           </select>
 
-
           <label
             v-if="input.constructor.name === 'BaseSelectInputModele' && input.htmlType !== 'select'"
             v-for="option in input.items" :for="'select-'+option.value"
           >
             <input
               :type="input.htmlType"
-              :id="option.value"
+              :id="'select'+option.value"
               :name="input.name"
               :value="option.value"
               :required="input.required"
@@ -62,9 +61,6 @@
             >
             {{option.name}}
           </label>
-
-
-
 
         </div>
 
