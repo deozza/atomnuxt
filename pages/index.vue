@@ -94,6 +94,10 @@
     <section>
       <BaseVideo src="https://www.youtube.com/embed/hGnBI0rDgA4" alt="Test vidéo" :iframe="true"></BaseVideo>
     </section>
+
+    <section>
+      <BaseBreadcrumb :links="breadcumbLinks"></BaseBreadcrumb>
+    </section>
   </div>
 </template>
 
@@ -119,6 +123,7 @@ import BaseVideo from "~/components/Atoms/Media/Video/BaseVideo.vue";
 import BaseFileInputModele from "~/components/Atoms/Input/FileInput/BaseFileInputModele";
 import SelectItem from "~/components/Atoms/Input/SelectInput/SelectItem";
 import BaseSelectInputModele from "~/components/Atoms/Input/SelectInput/BaseSelectInputModele";
+import BaseBreadcrumb from "~/components/Molecules/Breadcrumb/BaseBreadcrumb.vue";
 
 @Component({
   components: {
@@ -132,7 +137,8 @@ import BaseSelectInputModele from "~/components/Atoms/Input/SelectInput/BaseSele
     BaseTable,
     BaseProgressBar,
     BaseImage,
-    BaseVideo
+    BaseVideo,
+    BaseBreadcrumb
   }
 })
 export default class IndexPage extends Vue {
@@ -188,6 +194,30 @@ export default class IndexPage extends Vue {
       icon: "fab fa-github"
     }
   ];
+
+  breadcumbLinks: Array<BaseLinkModele> = [
+    {
+      link : "foo",
+      title : 'foo',
+      customClasses: [],
+      internalLink: true,
+      icon: ""
+    },
+    {
+      link : "bar",
+      title : 'bar',
+      customClasses: [],
+      internalLink: true,
+      icon: ""
+    },
+    {
+      link : "here",
+      title : 'here',
+      customClasses: [],
+      internalLink: true,
+      icon: ""
+    },
+  ]
 
 
   objectForTable: Array<object> = [
