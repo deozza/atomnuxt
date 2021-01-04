@@ -94,18 +94,17 @@
     <section>
       <BaseVideo src="https://www.youtube.com/embed/hGnBI0rDgA4" alt="Test vidéo" :iframe="true"></BaseVideo>
     </section>
-
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import BaseButton from "~/components/Atoms/Button/BaseButton.vue";
-import BaseParagraph from "~/components/Atoms/Typography/BaseParagraph.vue";
+import BaseParagraph from "~/components/Atoms/Typography/Paragraph/BaseParagraph.vue";
 import BaseTextInput from "~/components/Atoms/Input/BaseTextInput.vue";
 import BaseSelectInput from "~/components/Atoms/Input/BaseSelectInput.vue";
 import BaseForm from "~/components/Molecules/Form/BaseForm.vue";
-import BaseHeader from "~/components/Atoms/Typography/BaseHeader.vue";
+import BaseHeader from "~/components/Atoms/Typography/Header/BaseHeader.vue";
 import HorizontalNavbar from "~/components/Molecules/Menu/HorizontalNavbar.vue";
 import Link from "~/components/Atoms/Link/Link";
 import BaseTable from "~/components/Molecules/Table/BaseTable.vue";
@@ -114,8 +113,8 @@ import BaseColumn from "~/components/Atoms/Table/BaseColumn";
 import Columns from "~/components/Atoms/Table/Columns";
 import BaseProgressBar from "~/components/Atoms/ProgressBar/BaseProgressBar.vue";
 import Form from "~/components/Molecules/Form/Form";
-import BaseImage from "~/components/Atoms/Media/BaseImage.vue";
-import BaseVideo from "~/components/Atoms/Media/BaseVideo.vue";
+import BaseImage from "~/components/Atoms/Media/Image/BaseImage.vue";
+import BaseVideo from "~/components/Atoms/Media/Video/BaseVideo.vue";
 
 @Component({
   components: {

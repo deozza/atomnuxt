@@ -15,8 +15,8 @@
 import { Component, Vue } from "vue-property-decorator";
 import Link from "~/components/Atoms/Link/Link";
 import VerticalNavbar from "~/components/Molecules/Menu/VerticalNavbar.vue";
-import BaseHeader from "~/components/Atoms/Typography/BaseHeader.vue";
-import BaseParagraph from "~/components/Atoms/Typography/BaseParagraph.vue";
+import BaseHeader from "~/components/Atoms/Typography/Header/BaseHeader.vue";
+import BaseParagraph from "~/components/Atoms/Typography/Paragraph/BaseParagraph.vue";
 
 @Component({
   components: {

@@ -84,7 +84,7 @@ import BaseButton from "~/components/Atoms/Button/BaseButton.vue";
 import Form from "~/components/Molecules/Form/Form";
 import BaseTextInput from "~/components/Atoms/Input/BaseTextInput.vue";
 import BaseSelectInput from "~/components/Atoms/Input/BaseSelectInput.vue";
-import BaseParagraph from "~/components/Atoms/Typography/BaseParagraph.vue";
+import BaseParagraph from "~/components/Atoms/Typography/Paragraph/BaseParagraph.vue";
 
 interface BaseFormInterface{
   submitText:string;

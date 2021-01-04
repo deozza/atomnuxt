@@ -27,13 +27,7 @@
 
 <script lang="ts">
 import {Component, Prop, Vue} from "vue-property-decorator";
-
-interface BaseProgressBarInterface {
-  value:number;
-  visualType:string;
-  globalStyle:string;
-  animated:boolean;
-}
+import BaseProgressBarInterface from "~/components/Atoms/ProgressBar/BaseProgressBarInterface";
 
 @Component
 export default class BaseProgressBar extends Vue implements BaseProgressBarInterface{
