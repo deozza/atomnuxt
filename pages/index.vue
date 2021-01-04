@@ -91,6 +91,10 @@
       <BaseImage src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" alt="image test" :thumbnail="true" max-width="50%"></BaseImage>
     </section>
 
+    <section>
+      <BaseVideo src="https://www.youtube.com/embed/hGnBI0rDgA4" alt="Test vidéo" :iframe="true"></BaseVideo>
+    </section>
+
   </div>
 </template>
 
@@ -111,6 +115,7 @@ import Columns from "~/components/Atoms/Table/Columns";
 import BaseProgressBar from "~/components/Atoms/ProgressBar/BaseProgressBar.vue";
 import Form from "~/components/Molecules/Form/Form";
 import BaseImage from "~/components/Atoms/Media/BaseImage.vue";
+import BaseVideo from "~/components/Atoms/Media/BaseVideo.vue";
 
 @Component({
   components: {
@@ -123,7 +128,8 @@ import BaseImage from "~/components/Atoms/Media/BaseImage.vue";
     HorizontalNavbar,
     BaseTable,
     BaseProgressBar,
-    BaseImage
+    BaseImage,
+    BaseVideo
   }
 })
 export default class IndexPage extends Vue {
