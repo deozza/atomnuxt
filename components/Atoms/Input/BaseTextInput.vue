@@ -3,7 +3,7 @@
     class="flex-row"
   >
     <label :for="'text-'+id">
-      <slot></slot>
+      <slot></slot><span v-if="required" class="required-field">*</span>
     </label>
     <input
       :type="htmlType"
@@ -16,6 +16,7 @@
       :maxlength="(maxlength !== undefined && maxlength !== null && htmlType === 'text') ? maxlength : null"
       :min="(min !== undefined && min !== null && htmlType === 'number') ? min : null"
       :max="(max !== undefined && max !== null && htmlType === 'number') ? max : null"
+      v-model="value"
     >
 
   </li>
@@ -57,6 +58,7 @@ export default class BaseTextInput extends Vue implements BaseTextInputInterface
     }}) maxlength!: number;
   @Prop({required:false, type:Number, default:null}) max!: number;
   @Prop({required:false, type:Number, default:null}) min!: number;
+  @Prop({required:false, default:null}) value!: any;
 
 }
 </script>
@@ -74,6 +76,11 @@ li> label{
 
 li > input{
   flex: 2;
+}
+
+label span.required-field{
+  margin-left: 6px;
+  color: var(--danger_text);
 }
 
 @media screen and (max-width:760px) {

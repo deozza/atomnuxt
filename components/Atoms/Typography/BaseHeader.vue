@@ -30,6 +30,22 @@
   >
     <slot></slot>
   </h4>
+
+  <h5 v-else-if="htmlType === 'h5'"
+      :class="[
+	      { [`h-${visualType}`]: visualType },
+    	]"
+  >
+    <slot></slot>
+  </h5>
+
+  <h6 v-else-if="htmlType === 'h6'"
+      :class="[
+	      { [`h-${visualType}`]: visualType },
+    	]"
+  >
+    <slot></slot>
+  </h6>
 </template>
 
 <script lang="ts">
@@ -42,8 +58,14 @@ interface BaseHeaderInterface {
 
 @Component
 export default class BaseHeader extends Vue implements BaseHeaderInterface{
-  @Prop({required:true, type:String}) htmlType!: string;
-  @Prop({required:false, type:String, default:"default"}) visualType!: string;
+  @Prop({required:true, type:String, validator(value: string): boolean {
+      let expectedValues:Array<string> = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+      return expectedValues.includes(value);
+    }}) htmlType!: string;
+  @Prop({required:false, type:String, default:"light", validator(value: string): boolean {
+      let expectedValues:Array<string> = ['light', 'dark', 'default', 'primary', 'secondary', 'success', 'danger', 'warning', 'info'];
+      return expectedValues.includes(value);
+    }}) visualType!: string;
 }
 </script>
 
@@ -64,8 +86,34 @@ h1, h2, h3, h4, h5, h6 {
   margin: 20px 0 20px 0;
 }
 
+.h-light{
+  color: black;
+}
+.h-dark{
+  color: white;
+}
+.h-primary{
+  color: var(--primary_text);
+}
+
+.h-secondary{
+  color: var(--secondary_text);
+}
+
 .h-success{
-  color: var(--green_bg);
+  color: var(--success_text);
+}
+
+.h-danger{
+  color: var(--danger_text);
+}
+
+.h-warning{
+  color: var(--warning_text);
+}
+
+.h-info{
+  color: var(--info_text);
 }
 
 </style>

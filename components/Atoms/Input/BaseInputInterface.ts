@@ -6,4 +6,5 @@ export default interface BaseInputInterface extends Vue{
   htmlType: string;
   required: boolean;
   readonly: boolean;
+  value:any;
 }
