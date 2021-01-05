@@ -11,10 +11,9 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 import BaseBreadcrumbInterface from "./BaseBreadcrumbInterface";
 import BaseLink from "~/components/Atoms/Link/BaseLink.vue";
 import BaseLinkModele from "~/components/Atoms/Link/BaseLinkModele";
-import BaseParagraph from "~/components/Atoms/Typography/Paragraph/BaseParagraph.vue";
 
 @Component({
-  components: {BaseParagraph, BaseLink}
+  components: {BaseLink}
 })
 export default class BaseBreadcrumb extends Vue implements BaseBreadcrumbInterface{
   @Prop({required:true, type:Array}) links!: Array<BaseLinkModele>;
