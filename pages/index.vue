@@ -98,6 +98,10 @@
     <section>
       <BaseBreadcrumb :links="breadcumbLinks"></BaseBreadcrumb>
     </section>
+
+    <section>
+      <BasePagination :links="paginationLinks"></BasePagination>
+    </section>
   </div>
 </template>
 
@@ -124,6 +128,7 @@ import BaseFileInputModele from "~/components/Atoms/Input/FileInput/BaseFileInpu
 import SelectItem from "~/components/Atoms/Input/SelectInput/SelectItem";
 import BaseSelectInputModele from "~/components/Atoms/Input/SelectInput/BaseSelectInputModele";
 import BaseBreadcrumb from "~/components/Molecules/Breadcrumb/BaseBreadcrumb.vue";
+import BasePagination from "~/components/Molecules/Pagination/BasePagination.vue";
 
 @Component({
   components: {
@@ -138,7 +143,8 @@ import BaseBreadcrumb from "~/components/Molecules/Breadcrumb/BaseBreadcrumb.vue
     BaseProgressBar,
     BaseImage,
     BaseVideo,
-    BaseBreadcrumb
+    BaseBreadcrumb,
+    BasePagination
   }
 })
 export default class IndexPage extends Vue {
@@ -217,6 +223,38 @@ export default class IndexPage extends Vue {
       internalLink: true,
       icon: ""
     },
+  ]
+
+  paginationLinks: Array<BaseLinkModele> = [
+    {
+      link : "foo",
+      title : '0',
+      customClasses: [],
+      internalLink: true,
+      icon: ""
+    },
+    {
+      link : "foo",
+      title : '2',
+      customClasses: [],
+      internalLink: true,
+      icon: ""
+    },
+    {
+      link : "foo",
+      title : '3',
+      customClasses: ['active'],
+      internalLink: true,
+      icon: ""
+    },
+    {
+      link : "foo",
+      title : '10',
+      customClasses: [],
+      internalLink: true,
+      icon: ""
+    },
+
   ]
 
 
