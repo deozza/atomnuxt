@@ -1,9 +1,8 @@
-import {Vue} from "nuxt-property-decorator";
-
-export default interface BaseInputInterface extends Vue{
+export default interface BaseInputInterface{
   id: string;
   name: string;
   htmlType: string;
   required: boolean;
   readonly: boolean;
+  value:any;
 }

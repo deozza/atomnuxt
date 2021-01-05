@@ -10,16 +10,16 @@ These elements are used to display basic text content in your page.
 
 ```vue
 <template>
-      <BaseParagraph>This is a cool but basic paragraph</BaseParagraph>
+      <BaseParagraphModele>This is a cool but basic paragraph</BaseParagraphModele>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import BaseParagraph from "~/components/Atoms/Typography/BaseParagraph.vue";
+import BaseParagraphModele from "~/components/Atoms/Typography/BaseParagraphModele.vue";
 
 @Component({
   components: {
-    BaseParagraph,
+    BaseParagraphModele,
   }
 })
 export default class MyPage extends Vue {
@@ -36,7 +36,7 @@ Exemple :
 
 ```vue
 <template>
-      <BaseParagraph visualType="primary">This is a cool but basic paragraph</BaseParagraph>
+      <BaseParagraphModele visualType="primary">This is a cool but basic paragraph</BaseParagraphModele>
 </template>
 ```
 
@@ -46,16 +46,16 @@ Adding `visualType="primary` will add the class `p-primary` to the paragraph and
 
 ```vue
 <template>
-      <BaseHeader>This is a cool but basic header</BaseHeader>
+      <BaseHeaderModele>This is a cool but basic header</BaseHeaderModele>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import BaseHeader from "~/components/Atoms/Typography/BaseHeader.vue";
+import BaseHeaderModele from "~/components/Atoms/Typography/BaseHeaderModele.vue";
 
 @Component({
   components: {
-    BaseHeader,
+    BaseHeaderModele,
   }
 })
 export default class MyPage extends Vue {
@@ -74,7 +74,7 @@ Exemple :
 
  ```vue
  <template>
-       <BaseHeader visualType="primary" htmlType="h3">This is a cool but basic paragraph</BaseHeader>
+       <BaseHeaderModele visualType="primary" htmlType="h3">This is a cool but basic paragraph</BaseHeaderModele>
  </template>
  ```
  

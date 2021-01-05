@@ -1,4 +1,4 @@
-export default class Link{
+export default class BaseLinkModele{
   link: string;
   title: string;
   customClasses: Array<string>;

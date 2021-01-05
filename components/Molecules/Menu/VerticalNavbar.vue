@@ -28,16 +28,16 @@
 
 <script lang="ts">
 import {Component, Prop, Vue} from "vue-property-decorator";
-import MenuLinkInterface from "~/components/Atoms/Link/MenuLinkInterface";
+import MenuLinkInterface from "~/components/Molecules/Menu/MenuLinkInterface";
 import BaseLink from "~/components/Atoms/Link/BaseLink.vue";
-import Link from "~/components/Atoms/Link/Link";
+import BaseLinkModele from "~/components/Atoms/Link/BaseLinkModele";
 
 @Component({
   components: {BaseLink}
 })
 export default class VerticalNavbar extends Vue implements MenuLinkInterface{
   @Prop({required:true, type:String}) theme!: string;
-  @Prop({required:true, type:Array}) links!: Array<Link>;
+  @Prop({required:true, type:Array}) links!: Array<BaseLinkModele>;
   navbarIsToggled = false;
 }
 </script>

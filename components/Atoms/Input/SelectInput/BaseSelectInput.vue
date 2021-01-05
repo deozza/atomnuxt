@@ -4,7 +4,7 @@
     class="flex-row"
   >
     <label :for="'select-'+id" class="select-label">
-      <slot></slot>
+      <slot></slot><span v-if="required" class="required-field">*</span>
     </label>
     <select
       :id="'select-'+id"
@@ -39,10 +39,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 import BaseInputInterface from "~/components/Atoms/Input/BaseInputInterface";
-interface BaseSelectInputInterface extends BaseInputInterface{
-  items: Array<object>;
-  multiple: boolean;
-}
+import BaseSelectInputInterface from "~/components/Atoms/Input/SelectInput/BaseSelectInputInterface";
 
 @Component
 export default class BaseSelectInput extends Vue implements BaseSelectInputInterface{
@@ -61,6 +58,8 @@ export default class BaseSelectInput extends Vue implements BaseSelectInputInter
   @Prop({required:false, type:Boolean, default:false}) readonly!: boolean;
   @Prop({required:false, type:Array, default:[]}) items!: Array<object>;
   @Prop({required:false, type:Boolean, default:false}) multiple!: boolean;
+  @Prop({required:false, default:null}) value!: any;
+
 }
 </script>
 
@@ -77,6 +76,11 @@ li > .select-label{
 
 li > select{
   flex: 2;
+}
+
+label span.required-field{
+  margin-left: 6px;
+  color: var(--danger_text);
 }
 
 @media screen and (max-width:760px) {
